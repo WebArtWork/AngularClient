@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="undefined">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% block header %}
+	<title>undefined</title>
+	<meta name="description" content="Webpage of undefined">
+	<meta name="keywords" content="undefined">
+	<meta name="author" content="Honchar Denys">
+	{% endblock %}
+	<link rel="stylesheet" type="text/css" href="/public/css/index.css">
+</head>
+<body>
+	{% block topbar %}
+	{% include '_topbar.html' %}
+	{% endblock %}
+	{% block body %}{% endblock %}
+	<!-- Script -->
+	<script src="/public/gen/lab-min.js"></script>
+	{% block script %}
+	<script>
+		var app = angular.module('undefined',[]);
+	</script>
+	{% endblock %}
+	<script src="/public/js/crud.js"></script>
+	<script src="/public/js/controllers.js"></script>
+</body>
+</html>

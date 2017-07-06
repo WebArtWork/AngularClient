@@ -1,0 +1,6 @@
+{
+	"router": [{
+		"name": "Basic",
+		"src": "server.js"
+	}]
+}
