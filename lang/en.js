@@ -1,3 +1,3 @@
 module.exports = {
-	Apply:'Apply'
+	hello_world: 'Hello World'
 };
