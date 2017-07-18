@@ -1,0 +1,23 @@
+@font-face {
+	font-family: "public";
+	src: url("public.eot?9d10a287ed99f769c7b0ea1b249988c4?#iefix") format("embedded-opentype"),
+url("public.woff2?9d10a287ed99f769c7b0ea1b249988c4") format("woff2"),
+url("public.woff?9d10a287ed99f769c7b0ea1b249988c4") format("woff");
+}
+
+.icon {
+	line-height: 1;
+}
+
+.icon:before {
+	font-family: public !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.icon-add:before {
+	content: "\f101";
+}
+
+/*C:\Work\Apps\wawAngular/client/icons/add.svgC:\Work\Apps\wawAngular/client/gen/wawAngularClient*/

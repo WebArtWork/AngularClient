@@ -1,4 +1,20 @@
-{% extends 'structure/_index_simple.html' %}
+{% extends 'structure/_index.html' %}
+{% block header %}
+<title>Good_Life</title>
+<meta name="description" content="Webpage of Good_Life">
+<meta name="keywords" content="Good_Life">
+<meta name="author" content="Honchar Denys">
+<base href="/Route">
+{% endblock %}
+{% block topbar %}
+<topbar></topbar>
+{% endblock %}
 {% block body %}
-<div>{{{'hello_world'|tr('en.js')}}}</div>
+<ui-view></ui-view>
+{% endblock %}
+{% block script %}
+<script>
+	var app = angular.module('ngapp',['ui.router']);
+</script>
+<script src="/js/routes.js"></script>
 {% endblock %}
