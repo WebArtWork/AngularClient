@@ -1,8 +1,8 @@
 @font-face {
 	font-family: "public";
-	src: url("public.eot?f02e0d1973c5528c7eb34f59d65693d6?#iefix") format("embedded-opentype"),
-url("public.woff2?f02e0d1973c5528c7eb34f59d65693d6") format("woff2"),
-url("public.woff?f02e0d1973c5528c7eb34f59d65693d6") format("woff");
+	src: url("public.eot?7b2653b4088da3b395f5fb05a641bc25?#iefix") format("embedded-opentype"),
+url("public.woff2?7b2653b4088da3b395f5fb05a641bc25") format("woff2"),
+url("public.woff?7b2653b4088da3b395f5fb05a641bc25") format("woff");
 }
 
 .icon {
@@ -20,4 +20,4 @@ url("public.woff?f02e0d1973c5528c7eb34f59d65693d6") format("woff");
 	content: "\f101";
 }
 
-/*D:\Projects\waw/client/icons/add.svgD:\Projects\waw/client/gen/wawPrefix*/
+/*E:\Work\wawAngular/client/icons/add.svgE:\Work\wawAngular/client/gen/wawAngularPrefix*/
