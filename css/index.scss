@@ -1,54 +1,27 @@
-box {
-    position: relative;
-    display: table;
-    width: 100%;
-    height: 100%;
-}
+@charset "UTF-8";
 
-row {
-    display: table-row;
-    width: 100%;
-}
+// 1. Vendors - files like bootstrap etc.
+@import "vendor/normalize";
 
-row-o {
-    display: table-row;
-    width: 100%;
-    height: 1px;
-}
+// 2. Utils - configuration and helpers
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
 
-coll {
-    display: table-cell;
-    vertical-align: top;
-}
+// 3. Base - some basic stuff
+@import "base/base";
+@import "base/fonts";
+@import "base/tags";
+@import "base/newtags";
+@import "base/short-classes";
 
-noscroll {
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
+// 4. Layout - some related sections
 
-scroll {
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
+// 5. Parts - reuseble modules
+@import "elements/inputs";
+@import "elements/btn";
 
-hscroll {
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-}
+// 6. Page - specific styles for separete pages
+
+// 7. Themes - files for specific site themes (if it will be needed)
+@import "themes/default";

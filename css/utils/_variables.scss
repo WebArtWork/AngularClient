@@ -1,0 +1,36 @@
+//This file contains all application-wide Sass variables.
+// COLORS
+
+$primary: #3498DB;
+$primary-l: #55ade8;
+$primary-d: #2980B9;
+
+$accent: #19B295;
+$accent-l: #14cca6;
+$accent-d: #1da78a;
+
+$danger: #E95F5F;
+$danger-l: #C84034;
+$danger-d: #C84034;
+
+$black: #3C3E3B;
+$gray: #767676;
+$white: #ffffff;
+
+$border: #CECDCD;
+
+// FONTS
+$ff-title: "Open Sans", sans-serif;
+$ff-base: "Roboto", sans-serif;
+$fs-xs: 0.5rem;
+$fs-s: 0.75rem;
+$fs: 1rem;
+$fs-l: 1.25rem;
+$fs-xl: 1.5rem;
+$fs-xxl: 2rem;
+$fs-xxxl: 2.5rem;
+
+// SPACING
+$space: 1rem;
+$space05: $space / 2;
+$space2: $space * 2;
