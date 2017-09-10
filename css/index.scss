@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+// 1. Vendors - files like bootstrap etc.
+@import "vendor/normalize";
+
+// 2. Utils - configuration and helpers
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
+
+// 3. Base - some basic stuff
+@import "base/base";
+@import "base/fonts";
+@import "base/tags";
+@import "base/newtags";
+@import "base/short-classes";
+
+// 4. Layout - some related sections
+
+// 5. Parts - reuseble modules
+@import "elements/inputs";
+@import "elements/btn";
+
+// 6. Page - specific styles for separete pages
+
+// 7. Themes - files for specific site themes (if it will be needed)
+@import "themes/default";

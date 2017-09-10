@@ -1,4 +1,38 @@
 {% extends 'structure/_index_simple.html' %}
 {% block body %}
 <div>{{{'hello_world'|tr('en.js')}}}</div>
+<div class="p2">
+	<h1>h1 Lorem ipsum dolor sit amet.</h1>
+	<h2>h2 Lorem ipsum dolor sit amet.</h2>
+	<h3>h3 Lorem ipsum dolor sit amet.</h3>
+	<h4>h4 Lorem ipsum dolor sit amet.</h4>
+	<h5>h5 Lorem ipsum dolor sit amet.</h5>
+	<h6>h6 Lorem ipsum dolor sit amet.</h6>
+	<p>p - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nobis praesentium tempore! Praesentium quo, soluta similique neque cum ea eligendi.</p>
+	<ul>
+		<li>Lorem ipsum dolor sit amet.</li>
+		<li>Lorem ipsum dolor sit amet.</li>
+		<li>Lorem ipsum dolor sit amet.</li>
+		<li>Lorem ipsum dolor sit amet.</li>
+		<li>Lorem ipsum dolor sit amet.</li>
+	</ul>
+	<div class="mb">
+		<a href="#">Link</a><a href="#">Link</a><a href="#">Link</a>
+	</div>
+	<div>
+		<button>button</button>
+		<button class="m_disable">.m_disable</button>
+		<button class="m_danger">.m_danger</button>
+	</div>
+	<div class="mt">
+		<input type="text" placeholder="placeholder"><br><br>
+		<input type="text" placeholder="disabled" disabled><br><br>
+		<select>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+		</select><br><br>
+		<textarea rows="4"></textarea>
+	</div>
+</div>
 {% endblock %}
