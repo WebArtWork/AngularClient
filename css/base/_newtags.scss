@@ -4,6 +4,12 @@ box {
     position: relative;
     display: table;
     width: 100%;
+}
+
+fbox {
+    position: relative;
+    display: table;
+    width: 100%;
     height: 100%;
 }
 
@@ -18,7 +24,7 @@ row-o {
     height: 1px;
 }
 
-lua {
+lua, coll {
     display: table-cell;
     vertical-align: top;
     text-align: left;
