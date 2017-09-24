@@ -17,9 +17,10 @@
 
 // 4. Layout - some related sections
 
-// 5. Parts - reuseble modules
-@import "elements/inputs";
-@import "elements/btn";
+// 5. Modules - reuseble modules
+@import "modules/base/headings";
+@import "modules/inputs";
+@import "modules/btn";
 
 // 6. Page - specific styles for separete pages
 
