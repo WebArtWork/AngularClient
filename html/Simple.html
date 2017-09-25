@@ -3,23 +3,73 @@
 <div>{{{'hello_world'|tr('en.js')}}}</div>
 <div class="p2">
 
+<!-- Headings -->
+	<hr>
+	<h3>Headings</h3>
+	<hr>
+
 	<h1>Heading 1</h1>
 	<h2>Heading 2</h2>
 	<h3>Heading 3</h3>
 	<h4>Heading 4</h4>
 	<h5>Heading 5</h5>
 	<h6>Heading 6</h6>
-	<p>p - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nobis praesentium tempore! Praesentium quo, soluta similique neque cum ea eligendi.</p>
-	<ul>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-	</ul>
-	<div class="mb">
-		<a href="#">Link</a><a href="#">Link</a><a href="#">Link</a>
+
+<!-- Links -->
+	<hr>
+	<h3>Links</h3>
+	<hr>
+	<div>
+		<a href="#">Chile</a>
+		<a href="#">Micronesia</a>
+		<a href="#">Samoa</a>
+		<a href="#">Tanzania</a>
 	</div>
+
+<!-- Lists -->
+	<hr>
+	<h3>Lists</h3>
+	<hr>
+	<!-- Standart list -->
+	<ul>
+	  <li>Simple list</li>
+	  <li>Vatican City</li>
+	  <li>Somalia</li>
+	  <li>Fiji</li>
+	</ul>
+
+	<!-- Ordered list -->
+	<ol>
+	  <li>Ordered list</li>
+	  <li>Panama</li>
+	  <li>Afghanistan</li>
+	  <li>Egypt</li>
+	</ol>
+
+	<!-- List with more space -->
+	<ul class="m_vspace">
+	  <li><b>m_vspace</b> - more space</li>
+	  <li>Chad</li>
+	  <li>Guyana</li>
+	  <li>Malawi</li>
+	</ul>
+
+	<!-- List without points -->
+	<ol class="m_clear">
+	  <li><b>m_clear</b> - list without points</li>
+	  <li>Panama</li>
+	  <li>Afghanistan</li>
+	  <li>Egypt</li>
+	</ol>
+
+	<!-- Inline list -->
+	<ul class="m_inline">
+	  <li><b>m_inline</b> - inline list</li>
+	  <li>Argentina</li>
+	  <li>Pakistan</li>
+	  <li>Venezuela</li>
+	</ul>
+
 	<div>
 		<button>button</button>
 		<button class="m_disable">.m_disable</button>
@@ -35,5 +85,7 @@
 		</select><br><br>
 		<textarea rows="4"></textarea>
 	</div>
+
+	
 </div>
 {% endblock %}

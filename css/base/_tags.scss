@@ -6,25 +6,6 @@ p {
     word-wrap: break-word;
 }
 
-ul {
-    margin: 0 0 0.5rem 0;
-    list-style-type: disc;
-}
-
-li {
-    margin: 0;
-}
-
-// links
-a {
-    display: inline-block;
-    margin-right: $space05;
-    color: $primary-d;
-
-    &:hover {
-        color: $black;
-    }
-}
 
 //label
 label {
@@ -62,35 +43,6 @@ code {
     padding: $space05 $space;
     width: 100%;
     color: $danger-d;
-}
-
-//tables
-.table table, .table th, .table td {
-    border-collapse: collapse;
-    border: 1px solid $border;
-}
-
-table, th, td {
-    border-collapse: collapse;
-    border: none;
-}
-
-table {
-    display: inline-table;
-    width: 100%;
-    height: 100%;
-}
-
-th {
-    text-align: left;
-}
-
-.table td, .table th {
-    padding: $space05;
-}
-
-td, th {
-    padding: 0;
 }
 
 //forms
