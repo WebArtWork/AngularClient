@@ -12,6 +12,7 @@ textarea, select {
     font-weight: 300;
     letter-spacing: 1px;
     transition: all 0.25s;
+    margin-bottom: 1em;
 
     &:focus {
         border: 1px solid $primary-d;
