@@ -1,8 +1,8 @@
 @font-face {
 	font-family: "public";
-	src: url("public.eot?f02e0d1973c5528c7eb34f59d65693d6?#iefix") format("embedded-opentype"),
-url("public.woff2?f02e0d1973c5528c7eb34f59d65693d6") format("woff2"),
-url("public.woff?f02e0d1973c5528c7eb34f59d65693d6") format("woff");
+	src: url("public.eot?9497f1edb283f7e4ed5932f9f38c51af?#iefix") format("embedded-opentype"),
+url("public.woff2?9497f1edb283f7e4ed5932f9f38c51af") format("woff2"),
+url("public.woff?9497f1edb283f7e4ed5932f9f38c51af") format("woff");
 }
 
 .icon {
@@ -19,5 +19,44 @@ url("public.woff?f02e0d1973c5528c7eb34f59d65693d6") format("woff");
 .icon-add:before {
 	content: "\f101";
 }
+.icon-close:before {
+	content: "\f102";
+}
+.icon-code:before {
+	content: "\f103";
+}
+.icon-energy:before {
+	content: "\f104";
+}
+.icon-lock:before {
+	content: "\f105";
+}
+.icon-menu:before {
+	content: "\f106";
+}
+.icon-ok:before {
+	content: "\f107";
+}
+.icon-status1:before {
+	content: "\f108";
+}
+.icon-status2:before {
+	content: "\f109";
+}
+.icon-status5:before {
+	content: "\f10a";
+}
+.icon-tablet:before {
+	content: "\f10b";
+}
+.icon-trash:before {
+	content: "\f10c";
+}
+.icon-twitter:before {
+	content: "\f10d";
+}
+.icon-user:before {
+	content: "\f10e";
+}
 
-/*D:\Projects\waw/client/icons/add.svgD:\Projects\waw/client/gen/wawPrefix*/
+/*D:\Projects\waw/client/icons/add.svg,D:\Projects\waw/client/icons/close.svg,D:\Projects\waw/client/icons/code.svg,D:\Projects\waw/client/icons/energy.svg,D:\Projects\waw/client/icons/lock.svg,D:\Projects\waw/client/icons/menu.svg,D:\Projects\waw/client/icons/ok.svg,D:\Projects\waw/client/icons/status1.svg,D:\Projects\waw/client/icons/status2.svg,D:\Projects\waw/client/icons/status5.svg,D:\Projects\waw/client/icons/tablet.svg,D:\Projects\waw/client/icons/trash.svg,D:\Projects\waw/client/icons/twitter.svg,D:\Projects\waw/client/icons/user.svgD:\Projects\waw/client/gen/wawPrefix*/

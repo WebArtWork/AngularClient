@@ -70,22 +70,33 @@
 	  <li>Venezuela</li>
 	</ul>
 
+<!-- Buttons -->
+	<hr>
+	<h3>Buttons</h3>
+	<hr>
 	<div>
-		<button>button</button>
-		<button class="m_disable">.m_disable</button>
-		<button class="m_danger">.m_danger</button>
+		<button class="btn">Button</button>
+		<button class="btn"><i class="icon icon-status5"></i>With icon</button>
+		<button class="btn m_disabled">m_disabled</button>
+		<div class="pt">
+			<button class="btn m_accent">m_accent</button>
+			<button class="btn m_danger">m_danger</button>
+			<button class="btn m_black">m_black</button>
+			<button class="btn m_gray">m_gray</button>
+		</div>	
+		<div class="pt">
+			<button class="btn m_transparent">m_transparent</button>
+			<button class="btn m_transparent m_disabled">& m_disabled</button>
+			<button class="btn m_transparent m_accent">& m_accent</button>
+			<button class="btn m_transparent m_danger">& m_danger</button>
+			<button class="btn m_transparent m_black">& m_black</button>
+			<button class="btn m_transparent m_gray">& m_gray</button>
+		</div>
+		<div class="pt">
+			<button class="btn m_icon" title="m_icon - only icon"><i class="icon icon-twitter"></i></button>
+			<button class="btn m_ricon" title="m_ricon - only icon"><i class="icon icon-status1"></i></button>
+		</div>
+		
 	</div>
-	<div class="mt">
-		<input type="text" placeholder="placeholder"><br><br>
-		<input type="text" placeholder="disabled" disabled><br><br>
-		<select>
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-		</select><br><br>
-		<textarea rows="4"></textarea>
-	</div>
-
-	
 </div>
 {% endblock %}
