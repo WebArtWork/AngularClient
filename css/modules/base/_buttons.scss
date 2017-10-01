@@ -146,4 +146,10 @@
             background: $gray-d;
         }
     }
+    &.m_big {
+        font-size: $fs;
+    }
+    &.m_small {
+        font-size: $fs-xs;
+    }
 }

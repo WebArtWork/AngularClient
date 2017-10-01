@@ -14,6 +14,7 @@
 @import "base/tags";
 @import "base/newtags";
 @import "base/short-classes";
+@import "base/print";
 
 // 4. Layout - some related sections
 
@@ -24,7 +25,8 @@
 @import "modules/base/buttons";
 @import "modules/base/code";
 @import "modules/base/textparts";
-@import "modules/inputs";
+@import "modules/base/forms";
+@import "modules/base/forms-controls";
 
 // 6. Page - specific styles for separete pages
 

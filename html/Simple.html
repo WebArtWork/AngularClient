@@ -32,7 +32,7 @@
 	<blockquote class="m_danger" cite="">
 	<b>blockquote - m_danger</b> - inexpungeable forleft mead puppyfoot coregency narrational crotaphitic overeyebrowed Hellen cricoarytenoid icho foggily unsubstantially stabilizer sporophyll tunish hypodermis clicket epigastric horst corky uncoin sesquichloride tool
 	</blockquote>
-	
+
 <!-- Links -->
 	<hr>
 	<h3>Links</h3>
@@ -114,12 +114,105 @@
 			<button class="btn m_icon" title="m_icon - only icon"><i class="icon icon-twitter"></i></button>
 			<button class="btn m_ricon" title="m_ricon - only icon"><i class="icon icon-status1"></i></button>
 		</div>
+		<div>
+			<button class="btn m_big">m_big</button>
+			<button class="btn m_small">m_small</button>
+		</div>
 		
 	</div>
 
-<!-- Code -->	
+<!-- Forms -->	
 	<hr>
-	<h3>Code</h2>
+	<h3>Forms</h2>
 	<hr>
+	<input type="text" placeholder="Placeholder">
+	<div class="formwrap">
+		<label class="formwrap_label" for="testInput">With label</label>
+		<div class="formbox">
+			<div class="formbox_inp">
+				<input id="testInput" type="text" placeholder="Placeholder">
+			</div>
+		</div>
+	</div>
+	<div class="formwrap">
+		<label class="formwrap_label" for="testInput2">With button</label>
+		<div class="formbox">
+			<div class="formbox_inp">
+				<input id="testInput2" type="text" placeholder="Placeholder">
+			</div>
+			<div class="formbox_btn">
+				<button class="btn m_right">Button</button>
+			</div>
+		</div>
+	</div>
+	<div class="formwrap">
+		<label class="formwrap_label" for="testInput3">With icon</label>
+		<div class="formbox">
+			<div class="formbox_inp m_icon">
+				<input id="testInput3" type="password" placeholder="password">
+				<i class="icon icon-lock"></i>
+			</div>
+		</div>
+	</div>
+	<div class="formwrap">
+		<label class="formwrap_label" for="testInput4">With right icon</label>
+		<div class="formbox">
+			<div class="formbox_inp m_ricon">
+				<input id="testInput4" type="text" placeholder="Your name">
+				<i class="icon icon-user"></i>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Forms control elements -->	
+	<hr>
+	<h3>Forms control elements</h2>
+	<hr>
+	<div>
+		<label class="mark">
+			<input type="checkbox">
+			<span class="mark_sign"><span></span></span>
+			<div class="mark_text">Russia</div>
+		</label>		
+		<label class="mark">
+			<input type="checkbox">
+			<span class="mark_sign"><span></span></span>
+			<div class="mark_text">Canada</div>
+		</label>		
+		<label class="mark">
+			<input type="checkbox">
+			<span class="mark_sign"><span></span></span>
+			<div class="mark_text">Suriname</div>
+		</label>
+	</div>
+	<div>
+		<label class="mark m_radio">
+			<input type="radio" name="testradio">
+			<span class="mark_sign"><span></span></span>
+			<div class="mark_text">El Salvador</div>
+		</label>		
+		<label class="mark m_radio">
+			<input type="radio" name="testradio">
+			<span class="mark_sign"><span></span></span>
+			<div class="mark_text">San Marino</div>
+		</label>		
+		<label class="mark m_radio">
+			<input type="radio" name="testradio">
+			<span class="mark_sign"><span></span></span>
+			<div class="mark_text">Spain</div>
+		</label>		
+		<label class="mark m_radio">
+			<input type="radio" name="testradio">
+			<span class="mark_sign"><span></span></span>
+			<div class="mark_text">Brazil</div>
+		</label>
+	</div>
+	<div>
+		<div class="range-wrap">
+			<input type="range">
+		</div>
+		
+	</div>
+
 </div>
 {% endblock %}
