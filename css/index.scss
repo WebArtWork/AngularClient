@@ -7,6 +7,7 @@
 @import "utils/variables";
 @import "utils/functions";
 @import "utils/mixins";
+@import "utils/media";
 
 // 3. Base - some basic stuff
 @import "base/base";
@@ -15,8 +16,17 @@
 @import "base/newtags";
 @import "base/short-classes";
 @import "base/print";
+@import "base/media-visibility";
 
 // 4. Layout - some related sections
+@import "layouts/topbar";
+@import "layouts/footer";
+@import "layouts/grid";
+@import "layouts/flexgrid";
+@import "layouts/sidebar";
+@import "layouts/modal";
+@import "layouts/alerts";
+@import "layouts/viewer";
 
 // 5. Modules - reuseble modules
 @import "modules/base/headings";
@@ -26,7 +36,19 @@
 @import "modules/base/code";
 @import "modules/base/textparts";
 @import "modules/base/forms";
+@import "modules/base/tables";
+@import "modules/base/badges";
+@import "modules/base/breadcrumbs";
+@import "modules/base/divider";
 @import "modules/base/forms-controls";
+@import "modules/complex/accordion";
+@import "modules/complex/dropdown";
+@import "modules/complex/parallax";
+@import "modules/complex/pagination";
+@import "modules/complex/progress";
+@import "modules/complex/spinner";
+@import "modules/complex/tabs";
+@import "modules/complex/tooltips";
 
 // 6. Page - specific styles for separete pages
 
