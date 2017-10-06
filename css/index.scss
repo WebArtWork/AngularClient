@@ -7,16 +7,24 @@
 @import "utils/variables";
 @import "utils/functions";
 @import "utils/mixins";
-@import "utils/media";
+@import "utils/z-index";
+@import "utils/media-queries";
 
 // 3. Base - some basic stuff
 @import "base/base";
 @import "base/fonts";
 @import "base/tags";
 @import "base/newtags";
-@import "base/short-classes";
 @import "base/print";
 @import "base/media-visibility";
+@import "base/quickmark/margins";
+@import "base/quickmark/paddings";
+@import "base/quickmark/fonts";
+@import "base/quickmark/sizes";
+@import "base/quickmark/colors";
+@import "base/quickmark/floats";
+@import "base/quickmark/backgrounds";
+@import "base/quickmark/besides";
 
 // 4. Layout - some related sections
 @import "layouts/topbar";

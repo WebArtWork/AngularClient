@@ -1,20 +1,2 @@
 // This file contains all application-wide Sass functions.
 
-// z-index order function
-@function z($name) {
-    @if index($z-indexes, $name) {
-        @return length($z-indexes) - index($z-indexes, $name) + 1;
-    }
-    @else {
-        @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
-
-        @return null;
-    }
-}
-
-$z-indexes: ();
-
-// use
-// .sampe-class-name {
-//   z-index: z('sampe-class-name');
-// }
