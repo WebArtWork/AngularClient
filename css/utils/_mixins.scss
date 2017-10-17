@@ -32,3 +32,12 @@
   bottom: $bottom;
   left: $left;
 }
+
+// clearfix
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}

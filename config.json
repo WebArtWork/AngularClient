@@ -2,5 +2,12 @@
 	"router": [{
 		"name": "Basic",
 		"src": "server.js"
+	}],
+	"lab": [{
+		"name": "admin",
+		"files": ["1_angular.js", "angular-ui-router.min.js", "socket.io.js"]
+	}, {
+		"name": "public",
+		"files": ["1_angular.js"]
 	}]
 }

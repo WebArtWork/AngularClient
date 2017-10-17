@@ -4,7 +4,7 @@ directives.topbar=function(){
 	"ngInject";
 	return {
 		restrict: 'E',
-		templateUrl: '/html/structure/_topbar.html'
+		templateUrl: '/html/structure/topbar.html'
 	}
 };
 app.config(function($stateProvider, $locationProvider, $urlRouterProvider) {

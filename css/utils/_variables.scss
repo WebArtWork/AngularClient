@@ -5,16 +5,22 @@ $primary: #3498DB;
 $primary-l: #55ade8;
 $primary-d: #2980B9;
 
-$accent: #19B295;
-$accent-l: #14cca6;
-$accent-d: #1da78a;
+$accent: #E67E22;
+$accent-l: #F39C12;
+$accent-d: #D35400;
 
-$danger: #E95F5F;
-$danger-l: #C84034;
-$danger-d: #C84034;
+$danger: #E74C3C;
+$danger-l: #f1685a;
+$danger-d: #C0392B;
 
 $black: #3C3E3B;
-$gray: #767676;
+$black-l: #595a58;
+$black-d: #000000;
+
+$gray: #95A5A6;
+$gray-l: #c3cfd0;
+$gray-d: #7F8C8D;
+
 $white: #ffffff;
 
 $border: #CECDCD;
@@ -22,8 +28,8 @@ $border: #CECDCD;
 // FONTS
 $ff-title: "Open Sans", sans-serif;
 $ff-base: "Roboto", sans-serif;
-$fs-xs: 0.5rem;
-$fs-s: 0.75rem;
+$fs-xs: 0.75rem;
+$fs-s: 0.875rem;
 $fs: 1rem;
 $fs-l: 1.25rem;
 $fs-xl: 1.5rem;
@@ -34,3 +40,9 @@ $fs-xxxl: 2.5rem;
 $space: 1rem;
 $space05: $space / 2;
 $space2: $space * 2;
+
+// LINKS
+$link-c: $primary;
+$link-h-c: $primary-d;
+$link-td: underline;
+$link-h-td: underline;
