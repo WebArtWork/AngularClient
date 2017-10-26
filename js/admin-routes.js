@@ -4,20 +4,20 @@ directives.topbar=function(){
 	"ngInject";
 	return {
 		restrict: 'E',
-		templateUrl: '/html/structure/topbar.html'
+		templateUrl: '/html/admin/_topbar.html'
 	}
 };
 app.config(function($stateProvider, $locationProvider, $urlRouterProvider) {
-	$urlRouterProvider.otherwise('/Route');
-	var root = '/Route';
+	var root = '/Admin';
+	$urlRouterProvider.otherwise(root);
 	$stateProvider.state({
-		name: 'hello',
+		name: 'Users',
 		url: root,
-		template: '<h3>hello world!</h3>'
+		templateUrl: '/html/admin/Users.html'
 	}).state({
-		name: 'about',
-		url: root+'/about',
-		template: '<h3>Its the UI-Router hello world app!</h3>'
+		name: 'Profile',
+		url: root+'/Profile/:_id',
+		templateUrl: '/html/admin/Profile.html'
 	});
 	$locationProvider.html5Mode(true);
 });

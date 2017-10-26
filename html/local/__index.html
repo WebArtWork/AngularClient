@@ -4,27 +4,30 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{% block header %}
-	<title>Good_Life</title>
-	<meta name="description" content="Webpage of Good_Life">
-	<meta name="keywords" content="Good_Life">
-	<meta name="author" content="Honchar Denys">
+		<title>Good_Life</title>
+		<meta name="description" content="Webpage of Good_Life">
+		<meta name="keywords" content="Good_Life">
+		<meta name="author" content="Honchar Denys">
+		<base href="/">
 	{% endblock %}
 	<link rel="stylesheet" type="text/css" href="/css/index.css">
 </head>
 <body>
 	{% block topbar %}
-	{% include 'topbar.html' %}
+	{% include '__topbar.html' %}
 	{% endblock %}
 	{% block body %}{% endblock %}
 	<!-- Script -->
-	<script src="/gen/lab-min.js"></script>
-	{% block script %}
-	<script>
-		var app = angular.module('ngapp',[]);
-	</script>
+	{% block lab %}
+		<script src="/gen/lab-min.js"></script>
 	{% endblock %}
-	<script src="/js/crud.js"></script>
-	<script src="/js/controllers.js"></script>
-	<script src="/js/services.js"></script>
+	{% block script %}
+		<script>
+			var app = angular.module('ngapp',[]);
+		</script>
+	{% endblock %}
+	{% block crud %}
+		<script src="/js/crud.js"></script>
+	{% endblock %}
 </body>
 </html>

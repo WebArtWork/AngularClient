@@ -1,7 +1,21 @@
 <box>
-	<coll><a href="/" target="_self">Simple Page</a></coll>
-	<coll><a href="/Local" target="_self">Local Page</a></coll>
-	<coll><a href="/Route" target="_self">Route Page</a></coll>
-	<coll ui-sref="hello">Local Index</coll>
-	<coll ui-sref="about">Local Info</coll>
+	<coll><a href="/">WAW LOGO</a></coll>
+	{% if !user %}
+		<coll><a href="/Login">Login</a></coll>
+		<coll><a href="/Sign">Sign Up</a></coll>
+	{% endif %}
+	{% if user&&user.isAdmin %}
+		<coll><a href="/Admin">Admin</a></coll>
+	{% endif %}
+	{% if user %}
+		<coll>
+			<img src="" alt="User Face">
+			<span>User Name</span>
+			<i>Dropdown icon</i>
+			<box>
+				<row><a href="/Profile">Profile</a></row>
+				<row><a href="/api/user/logout">Log out</a></row>
+			</box>
+		</coll>
+	{% endif %}
 </box>
