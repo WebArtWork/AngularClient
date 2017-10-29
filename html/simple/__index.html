@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% block header %}
+		<title>WAW Framework</title>
+		<meta name="description" content="Initial waw client under angular 1.x and scss.">
+		<meta name="keywords" content="waw, waw framework">
+		<meta name="author" content="Honchar Denys">
+	{% endblock %}
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+<body>
+	<box>
+		<row style="height: 50px;">
+			{% block topbar %}
+			{% include '../__topbar.html' %}
+			{% endblock %}
+		</row>
+		<row>
+			{% block body %}{% endblock %}
+		</row>
+	</box>
+</body>
+</html>

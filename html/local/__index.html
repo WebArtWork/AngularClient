@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="ngapp">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% block header %}
+		<title>WAW Framework</title>
+		<meta name="description" content="Initial waw client under angular 1.x and scss.">
+		<meta name="keywords" content="waw, waw framework">
+		<meta name="author" content="Honchar Denys">
+	{% endblock %}
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+<body>
+	<box>
+		<row style="height: 50px;">
+			{% block topbar %}
+			{% include '../__topbar.html' %}
+			{% endblock %}
+		</row>
+		<row>
+			{% block body %}{% endblock %}
+		</row>
+	</box>
+	<!-- Script -->
+	{% block lab %}
+		<script src="/gen/lab-min.js"></script>
+	{% endblock %}
+	{% block script %}
+		<script>
+			var app = angular.module('ngapp',[]);
+		</script>
+	{% endblock %}
+	{% block crud %}
+		<script src="/js/crud.js"></script>
+	{% endblock %}
+</body>
+</html>

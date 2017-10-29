@@ -1,4 +1,7 @@
 module.exports = function(app, sd) {
+	/*
+	*	Support
+	*/
 		var ro = function(req, res, obj){
 			if(req.user&&req.user.lang) obj.lang = req.user.lang;
 			else if(req.session.lang) obj.lang = req.session.lang;
@@ -12,6 +15,7 @@ module.exports = function(app, sd) {
 				obj.uaUrl = req.originalUrl.replace('/en','').replace('/ua','').replace('/ru','') + '/ua';
 				obj.ruUrl = req.originalUrl.replace('/en','').replace('/ua','').replace('/ru','') + '/ru';
 			}
+			obj.user = req.user;
 			return obj;
 		}
 		var setEn = function(req, res, next){
@@ -35,33 +39,63 @@ module.exports = function(app, sd) {
 			}else req.session.lang = 'ru'
 			next();
 		};
-
+		var ensure = function(req, res, next){
+			if(req.user) next();
+			else res.json(false);
+		};
+		var ensureAdmin = function(req, res, next){
+			if(req.user&&req.user.isAdmin) next();
+			else res.json(false);
+		};
 	/*
-	*	Routes
+	*	Simple
+	*	[add simple below this line]
 	*/
-		var route = function(req, res){
-			res.render('Simple', ro(req, res, {}));
+		var Login = function(req, res){
+			res.render('simple/Login', ro(req, res, {}));
 		}
-		app.get('/', route);
-		app.get('/en', setEn, route);
-		app.get('/ua', setUa, route);
-		app.get('/ru', setRu, route);
+		app.get('/Login', Login);
+		app.get('/Login/en', setEn, Login);
+		app.get('/Login/ua', setUa, Login);
+		app.get('/Login/ru', setRu, Login);
+	/*
+	*	Local
+	*	[add local below this line]
+	*/
+		var Landing = function(req, res){
+			res.render('local/Landing', ro(req, res, {}));
+		}
+		app.get('/', Landing);
+		app.get('/en', setEn, Landing);
+		app.get('/ua', setUa, Landing);
+		app.get('/ru', setRu, Landing);
+
+		var Profile = function(req, res){
+			res.render('local/Profile', ro(req, res, {}));
+		}
+		app.get('/Profile', Profile);
+		app.get('/Profile/en', setEn, Profile);
+		app.get('/Profile/ua', setUa, Profile);
+		app.get('/Profile/ru', setRu, Profile);
+
+		var Sign = function(req, res){
+			res.render('local/Sign', ro(req, res, {}));
+		}
+		app.get('/Sign', Sign);
+		app.get('/Sign/en', setEn, Sign);
+		app.get('/Sign/ua', setUa, Sign);
+		app.get('/Sign/ru', setRu, Sign);
 		
-		var Local = function(req, res){
-			res.render('Local', ro(req, res, {}));
-		}
-		app.get('/Local', Local);
-		app.get('/Local/en', setEn, Local);
-		app.get('/Local/ua', setUa, Local);
-		app.get('/Local/ru', setRu, Local);
 		
-		var Route = function(req, res){
-			res.render('Route', ro(req, res, {}));
+	/*
+	*	Local Routes
+	*	[add local routes below this line]
+	*/
+		var admin = function(req, res){
+			res.render('Admin', ro(req, res, {}));
 		}
-		app.get('/Route', Route);
-		app.get('/Route/en', setEn, Route);
-		app.get('/Route/ua', setUa, Route);
-		app.get('/Route/ru', setRu, Route);
+		app.get('/Admin', ensureAdmin, admin);
+		app.get('/Admin/*', ensureAdmin, admin);
 	/*
 	*	Scripts
 	*/

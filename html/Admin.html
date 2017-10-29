@@ -1,0 +1,22 @@
+{% extends '__index_local_routes.html' %}
+
+{% block header %}
+	<title>Good_Life</title>
+	<meta name="description" content="Webpage of Good_Life">
+	<meta name="keywords" content="Good_Life">
+	<meta name="author" content="Honchar Denys">
+	<base href="/Admin">
+{% endblock %}
+
+{% block body %}
+	<topbar></topbar>
+	<ui-view></ui-view>
+{% endblock %}
+{% block script %}
+	<script src="/gen/admin-min.js"></script>
+	<script>
+		var app = angular.module('ngapp',['ui.router']);
+	</script>
+	<script src="/js/crud.js"></script>
+	<script src="/js/admin-routes.js"></script>
+{% endblock %}
