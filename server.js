@@ -95,9 +95,7 @@ module.exports = function(app, sd) {
 			res.render('Admin', ro(req, res, {}));
 		}
 		app.get('/Admin', ensureAdmin, admin);
-		app.get('/Admin/en', ensureAdmin, setEn, admin);
-		app.get('/Admin/ua', ensureAdmin, setUa, admin);
-		app.get('/Admin/ru', ensureAdmin, setRu, admin);
+		app.get('/Admin/*', ensureAdmin, admin);
 	/*
 	*	Scripts
 	*/

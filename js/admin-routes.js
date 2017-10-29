@@ -7,13 +7,25 @@ a_directives.topbar=function(){
 		templateUrl: '/html/admin/_topbar.html'
 	}
 };
-var ctrl = function($scope, User, $http){
+var ctrl = function($scope, User, $http, $timeout, $state){
 	var u = $scope.u = User;
+	var selectUser = function(){
+		for (var i = 0; i < u.allUsers.length; i++) {
+			if(u.allUsers[i]._id == $state.params._id){
+				u.user = u.allUsers[i];
+				break;
+			}
+		}
+	}
 	if(!u.allUsers){
 		$http.get('/api/user/admin/users').then(function(resp){
 			u.allUsers = resp.data;
+			if($state.params._id) selectUser();
 		});
+	}else if($state.params._id){
+		selectUser();
 	}
+	console.log();
 	u.create = function(email, password) {
 		$http.post('/api/user/admin/create', {
 			password: user.password,
@@ -25,6 +37,7 @@ var ctrl = function($scope, User, $http){
 	u.update = function(user) {
 		$timeout.cancel(user.ut);
 		$http.post('/api/user/admin/update', {
+			isAdmin: user.isAdmin,
 			avatarUrl: user.avatarUrl,
 			skills: user.skills,
 			followings: user.followings,

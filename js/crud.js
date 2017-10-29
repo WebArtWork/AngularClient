@@ -84,7 +84,6 @@ directives.fm = function(){
 */
 controllers.Users = function($scope, User){
 	"ngInject";
-	console.log('CALLEd');
 	$scope.User = User;
 }
 
@@ -107,7 +106,7 @@ services.User = function($http, $timeout){
 			self.data = resp.data.data;
 			self._id = resp.data._id;
 			$http.get('/api/user/users').then(function(resp){
-				self.users = resp.data.users;
+				self.users = resp.data;
 			});
 		});
 	// Skills
