@@ -1,12 +1,16 @@
 // experimental set of tags for markup
 
-box {
+body{
+    overflow: hidden;
+}
+
+lbox {
     position: relative;
     display: table;
     width: 100%;
 }
 
-fbox {
+box {
     position: relative;
     display: table;
     width: 100%;
@@ -18,13 +22,12 @@ row {
     width: 100%;
 }
 
-row-o {
-    display: table-row;
-    width: 100%;
-    height: 1px;
+cel {
+    display: table-cell;
+    height: 100%;
 }
 
-lua, coll {
+lua {
     display: table-cell;
     vertical-align: top;
     text-align: left;

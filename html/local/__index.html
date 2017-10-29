@@ -13,10 +13,16 @@
 	<link rel="stylesheet" type="text/css" href="/css/index.css">
 </head>
 <body>
-	{% block topbar %}
-	{% include '__topbar.html' %}
-	{% endblock %}
-	{% block body %}{% endblock %}
+	<box>
+		<row style="height: 50px;">
+			{% block topbar %}
+			{% include '__topbar.html' %}
+			{% endblock %}
+		</row>
+		<row>
+			{% block body %}{% endblock %}
+		</row>
+	</box>
 	<!-- Script -->
 	{% block lab %}
 		<script src="/gen/lab-min.js"></script>

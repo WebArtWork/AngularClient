@@ -15,15 +15,11 @@
 <body>
 	{% block body %}{% endblock %}
 	<!-- Script -->
-	{% block lab %}
-		<script src="/gen/lab-min.js"></script>
-	{% endblock %}
 	{% block script %}
+		<script src="/gen/lab-min.js"></script>
 		<script>
 			var app = angular.module('ngapp',[]);
 		</script>
-	{% endblock %}
-	{% block crud %}
 		<script src="/js/crud.js"></script>
 	{% endblock %}
 </body>

@@ -12,14 +12,11 @@
 	<topbar></topbar>
 	<ui-view></ui-view>
 {% endblock %}
-
-{% block lab %}
-	<script src="/gen/admin-min.js"></script>
-{% endblock %}
-
 {% block script %}
+	<script src="/gen/admin-min.js"></script>
 	<script>
 		var app = angular.module('ngapp',['ui.router']);
 	</script>
+	<script src="/js/crud.js"></script>
 	<script src="/js/admin-routes.js"></script>
 {% endblock %}

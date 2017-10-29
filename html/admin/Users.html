@@ -1,1 +1,12 @@
-users
+<box>
+	<row>
+		<coll>email</coll>
+		<coll>name</coll>
+		<coll>admin</coll>
+	</row>
+	<row ng-repeat="user in u.allUsers">
+		<coll>{{user.email}}</coll>
+		<coll>{{user.name}}</coll>
+		<coll>{{user.isAdmin}}</coll>
+	</row>
+</box>
