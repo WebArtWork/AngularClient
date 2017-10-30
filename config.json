@@ -9,5 +9,8 @@
 	}, {
 		"name": "public",
 		"files": ["1_angular.js"]
+	}, {
+		"name": "pgen",
+		"files": ["1_angular.js", "meditor.js"]
 	}]
 }

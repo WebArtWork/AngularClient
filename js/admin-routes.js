@@ -3,7 +3,7 @@ app.directive(a_directives);
 a_directives.topbar=function(){
 	"ngInject";
 	return {
-		restrict: 'E',
+		restrict: 'EA',
 		templateUrl: '/html/admin/_topbar.html'
 	}
 };

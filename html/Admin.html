@@ -9,8 +9,10 @@
 {% endblock %}
 
 {% block body %}
-	<topbar></topbar>
-	<ui-view></ui-view>
+	<box topbar style='height: 50px;'></box>
+	<box>
+		<ui-view></ui-view>
+	</box>
 {% endblock %}
 {% block script %}
 	<script src="/gen/admin-min.js"></script>

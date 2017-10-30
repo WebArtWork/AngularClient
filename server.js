@@ -85,8 +85,6 @@ module.exports = function(app, sd) {
 		app.get('/Sign/en', setEn, Sign);
 		app.get('/Sign/ua', setUa, Sign);
 		app.get('/Sign/ru', setRu, Sign);
-		
-		
 	/*
 	*	Local Routes
 	*	[add local routes below this line]
