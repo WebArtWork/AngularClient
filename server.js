@@ -4,7 +4,7 @@ module.exports = function(app, sd) {
 	*	[add simple below this line]
 	*/
 		var Login = function(req, res){
-			res.render('simple/Login', ro(req, res, {}));
+			res.render('simple/Login', sd._ro(req, res, {}));
 		}
 		app.get('/Login', Login);
 		app.get('/Login/en', sd._set_en, Login);
@@ -15,7 +15,7 @@ module.exports = function(app, sd) {
 	*	[add local below this line]
 	*/
 		var Explore = function(req, res){
-			res.render('local/Explore', ro(req, res, {}));
+			res.render('local/Explore', sd._ro(req, res, {}));
 		}
 		app.get('/', Explore);
 		app.get('/en', sd._set_en, Explore);
@@ -23,15 +23,15 @@ module.exports = function(app, sd) {
 		app.get('/ru', sd._set_ru, Explore);
 
 		var Profile = function(req, res){
-			res.render('local/Profile', ro(req, res, {}));
+			res.render('local/Profile', sd._ro(req, res, {}));
 		}
-		app.get('/Profile/:', Profile);
-		app.get('/Profile/:/en', sd._set_en, Profile);
-		app.get('/Profile/:/ua', sd._set_ua, Profile);
-		app.get('/Profile/:/ru', sd._set_ru, Profile);
+		app.get('/Profile/:_id', Profile);
+		app.get('/Profile/:_id/en', sd._set_en, Profile);
+		app.get('/Profile/:_id/ua', sd._set_ua, Profile);
+		app.get('/Profile/:_id/ru', sd._set_ru, Profile);
 
 		var Sign = function(req, res){
-			res.render('local/Sign', ro(req, res, {}));
+			res.render('local/Sign', sd._ro(req, res, {}));
 		}
 		app.get('/Sign', Sign);
 		app.get('/Sign/en', sd._set_en, Sign);
@@ -42,13 +42,13 @@ module.exports = function(app, sd) {
 	*	[add local routes below this line]
 	*/
 		var Admin = function(req, res){
-			res.render('Admin', ro(req, res, {}));
+			res.render('Admin', sd._ro(req, res, {}));
 		}
 		app.get('/Admin', sd._ensureAdmin, Admin);
 		app.get('/Admin/*', sd._ensureAdmin, Admin);
 
 		var User = function(req, res){
-			res.render('User', ro(req, res, {}));
+			res.render('User', sd._ro(req, res, {}));
 		}
 		app.get('/:page', sd._ensure, User);
 	/*

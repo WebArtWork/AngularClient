@@ -7,8 +7,8 @@ a_directives.topbar=function(){
 		templateUrl: '/html/admin/_topbar.html'
 	}
 };
-var ctrl = function($scope, User, $http, $timeout, $state){
-	var u = $scope.u = User;
+var userCtrl = function($scope, $http, $timeout, $state){
+	var u = $scope.u = {};
 	var selectUser = function(){
 		for (var i = 0; i < u.allUsers.length; i++) {
 			if(u.allUsers[i]._id == $state.params._id){
@@ -71,10 +71,10 @@ app.config(function($stateProvider, $locationProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise(root);
 	$stateProvider.state({
 		name: 'Users',
-		url: root, controller: ctrl,
+		url: root, controller: userCtrl,
 		templateUrl: '/html/admin/Users.html'
 	}).state({
-		name: 'Profile', controller: ctrl,
+		name: 'Profile', controller: userCtrl,
 		url: root+'/Profile/:_id',
 		templateUrl: '/html/admin/Profile.html'
 	});

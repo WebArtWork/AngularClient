@@ -79,14 +79,6 @@ directives.fm = function(){
 		template: '<input type="file" ng-hide="true" id="profileID">'
 	}
 }
-/*
-*	Controllers
-*/
-controllers.Users = function($scope, User){
-	"ngInject";
-	$scope.User = User;
-}
-
 /*start_user*/
 /*
 *	Crud file for client side user
@@ -145,8 +137,8 @@ services.User = function($http, $timeout){
 		this.delete = function(){
 			$http.get('/api/user/delete');
 		}
-		this.changePassword = function(oldPass, newPass){
-			if(!oldPass||!newPass) return;
+		this.changePassword = function(oldPass, newPass, passRepeated){
+			if(!oldPass||oldPass.length<8||!newPass) return;
 			$http.post('/api/user/changePassword',{
 				oldPass: oldPass,
 				newPass: newPass

@@ -10,6 +10,18 @@
 		<meta name="author" content="Honchar Denys">
 	{% endblock %}
 	<link rel="stylesheet" type="text/css" href="/css/index.css">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-78236546-11"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'UA-78236546-11');
+	</script>
+
 </head>
 <body>
 	<box>
@@ -46,16 +58,13 @@
 		</row>
 	</box>
 	<!-- Script -->
-	{% block lab %}
-		<script src="/gen/lab-min.js"></script>
-	{% endblock %}
 	{% block script %}
+		<script src="/gen/public-min.js"></script>
 		<script>
 			var app = angular.module('ngapp',[]);
 		</script>
-	{% endblock %}
-	{% block crud %}
 		<script src="/js/crud.js"></script>
+		<script src="/js/local.js"></script>
 	{% endblock %}
 </body>
 </html>
