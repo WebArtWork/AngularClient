@@ -1,19 +1,21 @@
 {
-	"router": [{
-		"name": "Basic",
-		"src": "server.js"
-	}],
-	"lab": [{
-		"name": "admin",
-		"files": ["1_angular.js", "angular-ui-router.min.js", "socket.io.js"]
-	}, {
-		"name": "user",
-		"files": ["1_angular.js", "angular-ui-router.min.js", "socket.io.js"]
-	}, {
-		"name": "public",
-		"files": ["1_angular.js"]
-	}, {
-		"name": "pgen",
-		"files": ["1_angular.js", "meditor.js"]
-	}]
+	"name": "wawAngular",
+	"description": "Sample project from waw framework.",
+	"icon": "/client/img/favicon.png",
+	"prefix": "initialize",
+	"license": "MIT",
+	"port": 8080,
+	"session": true,
+	"production": false,
+	"mongo": {
+		"host": "localhost",
+		"port": 27017,
+		"db": "newdb"
+	},
+	"passport": {
+		"local": {
+			"successRedirect": "/",
+			"failureRedirect": "/"
+		}
+	}
 }
