@@ -61,8 +61,9 @@
 	{% block script %}
 		<script src="/gen/public-min.js"></script>
 		<script>
-			var app = angular.module('ngapp',[]);
+			var app = angular.module('ngapp',['wcom']);
 		</script>
+		<script src="/js/wcom/wcom.js"></script>
 		<script src="/js/crud.js"></script>
 		<script src="/js/local.js"></script>
 	{% endblock %}

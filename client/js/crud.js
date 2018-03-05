@@ -1,19 +1,5 @@
 var services = {}, filters = {}, directives = {}, controllers = {};
 app.service(services).filter(filters).directive(directives).controller(controllers);
-services.socket = function(){
-	"ngInject";
-	var loc = window.location.host;
-	var socket = io.connect(loc);
-	socket.on('disconnect', function(){
-		socket = io.connect(loc);
-	});
-	this.emit = function(){
-
-	}
-	this.on = function(){
-
-	}
-}
 services.img=function(){
 	"ngInject";
 	this.resizeUpTo = function(info, callback){
@@ -85,11 +71,11 @@ directives.fm = function(){
 *	We don't use waw crud on the user as it's basically personal update.
 *	And if user use more then one device we can easly handle that with sockets.
 */
-services.User = function($http, $timeout){
+services.User = function($http, $timeout, mongo){
 	// Initialize
 		var self = this, ut;
 		this.all_skills = ['cooking','fishing','painting'];
-		$http.get('/api/user/get').then(function(resp){
+		$http.get('/api/user/me').then(function(resp){
 			self.avatarUrl = resp.data.avatarUrl;
 			self.skills = resp.data.skills;
 			self.gender = resp.data.gender;
@@ -97,9 +83,7 @@ services.User = function($http, $timeout){
 			self.birth = resp.data.birth;
 			self.data = resp.data.data;
 			self._id = resp.data._id;
-			$http.get('/api/user/users').then(function(resp){
-				self.users = resp.data;
-			});
+			self.users = mongo.get('user');
 		});
 	// Skills
 		this.addSkill = function(skill){
@@ -134,8 +118,11 @@ services.User = function($http, $timeout){
 			$timeout.cancel(ut);
 			ut = $timeout(self.update, 1000);
 		}
+
 		this.delete = function(){
-			$http.get('/api/user/delete');
+			mongo.delete('user', {}, function(){
+				window.location.href = "/";
+			});
 		}
 		this.changePassword = function(oldPass, newPass, passRepeated){
 			if(!oldPass||oldPass.length<8||!newPass) return;

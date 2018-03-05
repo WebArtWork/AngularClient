@@ -44,8 +44,8 @@ module.exports = function(app, sd) {
 		var Admin = function(req, res){
 			res.render('Admin', sd._ro(req, res, {}));
 		}
-		app.get('/Admin', sd._ensureAdmin, Admin);
-		app.get('/Admin/*', sd._ensureAdmin, Admin);
+		app.get('/Admin', sd.ensure_admin||sd._ensure_block, Admin);
+		app.get('/Admin/*', sd.ensure_admin||sd._ensure_block, Admin);
 
 		var User = function(req, res){
 			res.render('User', sd._ro(req, res, {}));
