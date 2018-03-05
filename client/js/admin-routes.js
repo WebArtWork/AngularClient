@@ -71,6 +71,10 @@ app.config(function($stateProvider, $locationProvider, $urlRouterProvider) {
 		name: 'Profile', controller: userCtrl,
 		url: root+'/Profile/:_id',
 		templateUrl: '/html/admin/Profile.html'
+	}).state({
+		name: 'SuperAdmin', controller: userCtrl,
+		url: root+'/SuperAdmin',
+		templateUrl: '/html/admin/SuperAdmin.html'
 	});
 	$locationProvider.html5Mode(true);
 });
