@@ -6,10 +6,7 @@
 
 <div>
 	<h3>My Skills</h3>
-	<label ng-repeat='skill in u.all_skills'>
-		<span>{{skill}}</span>
-		<input type="checkbox" ng-model="u.skills_checked[skill]" ng-change="u.updateSkill()">
-	</label>
+	{% for skill in user.skills %}
 </div>
 
 <label>
