@@ -2,7 +2,9 @@
 <scroll ng-if="u.qu">
 	<h2>Local VIEW</h2>
 	<span ng-repeat="user in u.qu">
-		<img ng-src="{{user.avatarUrl}}" alt="Avatar of {{user.name}}">
+		<a ng-href="/Profile/{{user._id}}">
+			<img ng-src="{{user.avatarUrl}}" alt="Avatar of {{user.name}}">
+		</a>
 		<span>{{user.name}}</span>
 		<button ng-if="!user.following" ng-click="u.follow(user)">Follow</button>
 		<button ng-if="user.following" ng-click="u.unfollow(user)">Unfollow</button>

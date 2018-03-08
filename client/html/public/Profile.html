@@ -1,33 +1,18 @@
 {% extends '__index.html' %}
 
 {% block body %}
+	<h2>{{{user.name}}}</h2>
 
+	<div>
+		<h3>My Skills</h3>
+		{% for skill in user.skills %}
+		<span>{{{skill}}}</span>
+		{% endfor %}
+	</div>
 
+	<h3>{{{user.birth|date('Y-m-d')}}}</h3>
 
-<div>
-	<h3>My Skills</h3>
-	{% for skill in user.skills %}
-</div>
+	<h3>{{{user.gender}}}</h3>
 
-<label>
-	<h3>Name</h3>
-	<input type="text" ng-model="u.name" ng-change="u.updateAfterWhile()">
-</label>
-
-<label>
-	<h3>Birthday</h3>
-	<input type="date" ng-model="u.birth" ng-change="u.updateAfterWhile()">
-</label>
-
-<label>
-	<h3>Gender</h3>
-	<select type="text" ng-model="u.gender" ng-change="u.updateAfterWhile()" ng-options="gender for gender in ['male', 'female']"></select>
-</label>
-
-<label for="ProfileID">
-	<img ng-src="{{u.avatarUrl}}" alt="User Face">
-</label>
-
-
-
+	<img src="{{{user.avatarUrl}}}" alt="User Face">
 {% endblock %}

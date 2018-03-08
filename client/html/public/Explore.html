@@ -5,12 +5,14 @@
 		<cel lusers>
 			<scroll>
 				<h2>SEO VIEW</h2>
-				{% for user in users %}
+				{% for _user in users %}
 				<span>
-					<img src="{{{user.avatarUrl}}}" alt="Avatar of {{{user.name}}}">
-					<span>{{{user.name}}}</span>
-					<button ng-if="u._id&&!u.following('{{{user._id|string}}}')" ng-click="u.follow({_id: '{{{user._id|string}}}'})">Follow</button>
-					<button ng-if="u._id&&u.following('{{{user._id|string}}}')" ng-click="u.unfollow({_id: '{{{user._id|string}}}'})">Unfollow</button>
+					<a href="/Profile/{{{_user._id|string}}}">
+						<img src="{{{_user.avatarUrl}}}" alt="Avatar of {{{_user.name}}}">
+					</a>
+					<span>{{{_user.name}}}</span>
+					<button ng-if="u._id&&!u.following('{{{_user._id|string}}}')" ng-click="u.follow({_id: '{{{_user._id|string}}}'})">Follow</button>
+					<button ng-if="u._id&&u.following('{{{_user._id|string}}}')" ng-click="u.unfollow({_id: '{{{_user._id|string}}}'})">Unfollow</button>
 				</span>
 				{% endfor %}
 			</scroll>
