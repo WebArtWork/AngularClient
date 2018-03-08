@@ -4,7 +4,11 @@ module.exports = function(app, sd) {
 	*	[add local below this line]
 	*/
 		var Explore = function(req, res){
-			res.render('public/Explore', sd._ro(req, res, {}));
+			sd.User.find({}).limit(10).exec(function(err, users){
+				res.render('public/Explore', sd._ro(req, res, {
+					users: users
+				}));
+			});
 		}
 		app.get('/', Explore);
 		app.get('/en', sd._set_en, Explore);
