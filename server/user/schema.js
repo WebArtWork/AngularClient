@@ -18,7 +18,7 @@ var schema = mongoose.Schema({
 	/*
 	*	Updatable fields
 	*/
-	gender: {type: Boolean},
+	gender: {type: String, enums: ['name', 'female'], sparse: true},
 	name: {type: String},
 	birth: {type: Date},
 	skills: [{type: String, enum: ['cooking','fishing','painting']}],

@@ -26,6 +26,7 @@ services.User = function($http, $timeout, mongo, fm){
 			for(let key in resp.data){
 				self[key] = resp.data[key];
 			}
+			self.birth = new Date(self.birth);
 			self.skills_checked = {};
 			for (var i = 0; i < self.skills.length; i++) {
 				self.skills_checked[self.skills[i]] = true;
