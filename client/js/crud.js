@@ -11,8 +11,6 @@ services.User = function($http, $timeout, mongo, fm){
 		this.all_skills = ['cooking','fishing','painting'];
 		let updateAll = function(){
 			return {
-				followings: self.followings,
-				followers: self.followers,
 				gender: self.gender,
 				skills: self.skills,
 				birth: self.birth,
@@ -37,6 +35,9 @@ services.User = function($http, $timeout, mongo, fm){
 					doc.birth = new Date(doc.birth);
 					let ageDate = new Date(Date.now() - doc.birth.getTime());
 					cb(Math.abs(ageDate.getUTCFullYear() - 1970));
+				},
+				following: function(val, cb, doc){
+					cb(self.following(doc._id));
 				}
 			});
 		});
@@ -178,13 +179,30 @@ services.User = function($http, $timeout, mongo, fm){
 		this.if_false_make_true = function(prefix){
 			if(!self[prefix]) self[prefix] = true;
 		}
-
-
+	// Follow Management
+		this.following = function(_id){
+			for (var i = 0; i < self.followings.length; i++) {
+				if(self.followings[i] == _id) return true;
+			}
+			return false;
+		}
 		this.follow = function(user){
-			mongo.updateAll('user', updateAll());
+			user.following = true;
+			self.followings.push(user._id);
+			$http.post('/api/user/follow', {
+				_id: user._id
+			});
 		}
 		this.unfollow = function(user){
-			mongo.updateAll('user', updateAll());
+			user.following = false;
+			for (var i = self.followings.length - 1; i >= 0; i--) {
+				if(self.followings[i]==user._id){
+					self.followings.splice(i, 1);
+				}
+			}
+			$http.post('/api/user/unfollow', {
+				_id: user._id
+			});
 		}
 	// Custom Routes
 		this.updateAfterWhile = function(){

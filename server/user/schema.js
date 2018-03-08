@@ -3,12 +3,10 @@ var bcrypt = require('bcrypt-nodejs');
 var schema = mongoose.Schema({
 	email: {type: String, unique: true, sparse: true, trim: true},
 	reg_email: {type: String, unique: true, sparse: true, trim: true},
-
 	/*
 	*	Auth Management
 	*/
 	is: {},
-
 	/*
 	*	Custom Updateable fields
 	*/
@@ -16,14 +14,17 @@ var schema = mongoose.Schema({
 	avatarUrl: {type: String, default: '/api/user/default.png'},
 
 	/*
+	*	Follow Management
+	*/
+	followings: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
+	followers: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
+	/*
 	*	Updatable fields
 	*/
 	gender: {type: String, enums: ['male', 'female'], sparse: true},
 	name: {type: String},
 	birth: {type: Date},
 	skills: [{type: String, enum: ['cooking','fishing','painting']}],
-	followings: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
-	followers: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
 	data: {}
 });
 schema.methods.generateHash = function(password) {

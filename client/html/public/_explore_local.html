@@ -4,5 +4,7 @@
 	<span ng-repeat="user in u.qu">
 		<img ng-src="{{user.avatarUrl}}" alt="Avatar of {{user.name}}">
 		<span>{{user.name}}</span>
+		<button ng-if="!user.following" ng-click="u.follow(user)">Follow</button>
+		<button ng-if="user.following" ng-click="u.unfollow(user)">Unfollow</button>
 	</span>
 </scroll>

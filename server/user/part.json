@@ -10,7 +10,7 @@
 	"crud": {
 		"get": ["admin"],
 		"updatesAll": [{
-			"keys": ["gender","name","birth","skills","followings","followers","data"],
+			"keys": ["gender","name","birth","skills","data"],
 			"name": ""
 		}],
 		"updates": [],

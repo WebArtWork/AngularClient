@@ -78,6 +78,45 @@ module.exports = function(sd) {
 			});
 		});
 	/*
+	*	Follow Management
+	*/
+		let unfollow_user = function(req, res, next){
+			User.findOne({
+				_id: req.body._id
+			}, function(err, user){
+				req._user = user;
+				for (var i = req.user.followings.length - 1; i >= 0; i--) {
+					if(req.user.followings[i].toString()==req.body._id.toString()){
+						req.user.followings.splice(i, 1);
+					}
+				}
+				for (var i = user.followers.length - 1; i >= 0; i--) {
+					if(user.followers[i].toString()==req.user._id.toString()){
+						user.followers.splice(i, 1);
+					}
+				}
+				sd._parallel([function(n){
+					user.save(n);
+				},function(n){
+					req.user.save(n);
+				}], next);
+			});
+		}
+		router.post("/follow", sd._ensure, unfollow_user, function(req, res) {
+			req.user.followings.push(req.body._id);
+			req._user.followers.push(req.user._id);
+			sd._parallel([function(n){
+				req._user.save(n);
+			},function(n){
+				req.user.save(n);
+			}], function(){
+				res.json(true);
+			});
+		});
+		router.post("/unfollow", sd._ensure, unfollow_user, function(req, res) {
+			res.json(true);
+		});
+	/*
 	*	Avatar Management
 	*/
 		router.post("/avatar", function(req, res) {
