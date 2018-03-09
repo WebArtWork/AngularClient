@@ -25,7 +25,8 @@ services.User = function($http, $timeout, $state, mongo){
 				doc.birth = new Date(doc.birth);
 				let ageDate = new Date(Date.now() - doc.birth.getTime());
 				cb(Math.abs(ageDate.getUTCFullYear() - 1970));
-			}
+			},
+			architect: mongo.beArr
 		}, {
 			query: 'getadmin'
 		}, function(){
@@ -52,7 +53,7 @@ services.User = function($http, $timeout, $state, mongo){
 		}
 	}
 	this.updateAfterWhile = function(user){
-		mongo.afterWhile(self, function(){
+		mongo.afterWhile(user, function(){
 			if(self.is.super_admin){
 				mongo.updateAll('user', user, 'super');
 			}else if(self.is.admin){

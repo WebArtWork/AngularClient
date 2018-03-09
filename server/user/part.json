@@ -13,10 +13,10 @@
 			"keys": ["gender","name","birth","skills","data"],
 			"name": ""
 		},{
-			"keys": ["gender","name","birth","skills","data"],
+			"keys": ["gender","name","birth","skills","data","kind"],
 			"name": "admin"
 		},{
-			"keys": ["gender","name","birth","skills","data","is"],
+			"keys": ["gender","name","birth","skills","data","is","kind","architect"],
 			"name": "super"
 		}],
 		"updates": [],

@@ -7,6 +7,7 @@
 			<cel ng-if="u.is.super_admin">admin</cel>
 			<cel ng-if="u.is.super_admin">delete</cel>
 			<cel ng-if="u.is.super_admin">new pass</cel>
+			<cel>Kind</cel>
 		</row>
 		<row ng-repeat="user in u.users">
 			<cel><img ng-src="{{user.avatarUrl}}" alt=""></cel>
@@ -24,6 +25,15 @@
 					<input type="password" placeholder="new pass" ng-model="user.newPass" autocomplete="new-password">
 					<button type="submit">Change</button>
 				</form>
+			</cel>
+
+			<cel>
+				<label ng-repeat="kind in u.architect">
+					<h3>{{kind.name}}</h3>
+					<input type="text" ng-model="user.kind[kind.name]" ng-if="kind.what=='text'" ng-change="u.updateAfterWhile(user)">
+					<input type="checkbox" ng-model="user.kind[kind.name]" ng-if="kind.what=='bool'" ng-change="u.update(user)">
+					<input type="number" ng-model="user.kind[kind.name]" ng-if="kind.what=='number'" ng-change="u.updateAfterWhile(user)">
+				</label>
 			</cel>
 
 		</row>

@@ -60,6 +60,7 @@ module.exports = function(sd) {
 		router.get("/me", sd._ensure, function(req, res) {
 			res.json({
 				followings: req.user.followings,
+				architect: req.user.architect,
 				followers: req.user.followers,
 				avatarUrl: req.user.avatarUrl,
 				skills: req.user.skills,
@@ -67,6 +68,7 @@ module.exports = function(sd) {
 				birth: req.user.birth,
 				name: req.user.name,
 				date: req.user.date,
+				kind: req.user.kind,
 				_id: req.user._id,
 				is: req.user.is
 			});

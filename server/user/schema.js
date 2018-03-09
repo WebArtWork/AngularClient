@@ -7,6 +7,11 @@ var schema = mongoose.Schema({
 	*	Auth Management
 	*/
 	is: {},
+	kind: {},
+	architect: [{
+		name: String,
+		what: {type: String, enum: ['text', 'bool', 'number']}
+	}],
 	/*
 	*	Custom Updateable fields
 	*/

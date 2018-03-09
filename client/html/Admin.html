@@ -26,14 +26,14 @@
 	<box style='height: 50px;' ng-controller="topbar">
 		<lma><a href="/" target="_self">WAW LOGO</a></lma>
 		<cma style="width: 100px;"><a ui-sref="Users">Users</a></cma>
-		<cma style="width: 100px;" ng-if="u.is.super_admin"><a ui-sref="SuperAdmin">Super Admins</a></cma>
+		<cma style="width: 100px;" ng-if="u.is.super_admin"><a ui-sref="SuperAdmin">Architect</a></cma>
 	</box>
 	<div>
 		<ui-view></ui-view>
 	</div>
 	<script src="/gen/admin-min.js"></script>
 	<script>
-		var app = angular.module('ngapp',['ui.router', 'wcom']);
+		var app = angular.module('ngapp', ['ui.router', 'wcom']);
 	</script>
 	<script src="/js/wcom/wcom.js"></script>
 	<script src="/js/admin.js"></script>
