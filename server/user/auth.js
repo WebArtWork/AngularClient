@@ -56,7 +56,7 @@ module.exports = function(sd) {
 				recaptcha.verify(req, function(error) {
 					User.findOne({
 						'email': username.toLowerCase()
-					},function(err, user) {
+					}, function(err, user) {
 						if (err) return done(err);
 						if (user) return done(null, false);
 						else {

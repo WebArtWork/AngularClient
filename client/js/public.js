@@ -34,32 +34,7 @@ controllers.Auth = function($scope){
 		};
 	/*
 	*	Submit Register
-	*	http://izitoast.marcelodolce.com/#Start
 	*/
-		$scope.doSignupStepOne = function(){
-			if (!user.username) {
-				user.err = 1;
-				return iziToast.show({
-					message: 'You have to fill email.'
-				});
-			} else if (!user.name) {
-				user.err = 2;
-				return iziToast.show({
-					message: 'Please add your name.'
-				});
-			} else if (!user.password || user.password.length < 8) {
-				user.err = 3;
-				return iziToast.show({
-					message: 'Make sure your password have more then 7 characters.'
-				});
-			} else if (user.password != user.rpassword) {
-				user.err = 7;
-				return iziToast.show({
-					message: 'Your two passwords is not equal.'
-				});
-			}
-			$scope.authStep2=true
-		}
 		$scope.doSignup = function(){
 			if (!user.username) {
 				user.err = 1;

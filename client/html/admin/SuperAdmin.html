@@ -1,0 +1,23 @@
+<scroll>
+	<box>
+		<row>
+			<cel>avatar</cel>
+			<cel>email</cel>
+			<cel>name</cel>
+			<cel>admin</cel>
+			<cel>delete</cel>
+		</row>
+		<!-- |filter:{'is.admin': true} -->
+		<row ng-repeat="user in u.users" ng-if="user.is.admin">
+			<cel><img ng-src="{{user.avatarUrl}}" alt=""></cel>
+			<cel>{{user.email}}</cel>
+			<cel>{{user.name}}</cel>
+			<cel>
+				<button ng-click="user.is.admin=!user.is.admin; u.update(user);"><span ng-if="!user.is.admin">Make</span><span ng-if="user.is.admin">Remove</span> Admin</button>
+			</cel>
+			<cel>
+				<button ng-click="u.delete(user)" ng-if="u._id != user._id">Delete</button>
+			</cel>
+		</row>
+	</box>
+</scroll>

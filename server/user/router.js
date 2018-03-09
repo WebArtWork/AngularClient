@@ -5,6 +5,10 @@ module.exports = function(sd) {
 		if(req.user&&req.user.is&&req.user.is.admin) next();
 		else res.send(false);
 	};
+	let ensure_super = sd.ensure_super = function(req, res, next){
+		if(req.user&&req.user.is&&req.user.is.super_admin) next();
+		else res.send(false);
+	};
 	/*
 	*	waw crud : Get Configuration
 	*/
@@ -16,6 +20,12 @@ module.exports = function(sd) {
 	/*
 	*	waw crud : Update Configuration
 	*/
+		sd['ensure_update_all_user_super'] = ensure_super;
+		sd['query_update_all_user_super'] = function(req, res, next) {
+			return {
+				_id: req.body._id
+			}
+		};
 		sd['ensure_update_all_user_admin'] = ensure_admin;
 		sd['query_update_all_user_admin'] = function(req, res, next) {
 			return {
@@ -69,7 +79,7 @@ module.exports = function(sd) {
 				});
 			}else res.json(false);
 		});
-		router.post("/admin/changePassword", ensure_admin, function(req, res) {
+		router.post("/admin/changePassword", ensure_super, function(req, res) {
 			User.findOne({_id: req.body._id}, function(err, user){
 				user.password = user.generateHash(req.body.newPass);
 				user.save(function(){

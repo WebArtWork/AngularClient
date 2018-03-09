@@ -12,6 +12,12 @@
 		"updatesAll": [{
 			"keys": ["gender","name","birth","skills","data"],
 			"name": ""
+		},{
+			"keys": ["gender","name","birth","skills","data"],
+			"name": "admin"
+		},{
+			"keys": ["gender","name","birth","skills","data","is"],
+			"name": "super"
 		}],
 		"updates": [],
 		"deletes": ["admin"],

@@ -1,64 +1,72 @@
-var a_directives = {};
-app.directive(a_directives);
-a_directives.topbar=function(){
+var services = {}, filters = {}, directives = {}, controllers = {};
+app.service(services).filter(filters).directive(directives).controller(controllers);
+services.User = function($http, $timeout, $state, mongo){
 	"ngInject";
-	return {
-		restrict: 'EA',
-		templateUrl: '/html/admin/_topbar.html'
-	}
-};
-var userCtrl = function($scope, $http, $timeout, $state, mongo, User){
-	var u = $scope.u = User;
-	var selectUser = function(){
-		for (var i = 0; i < u.allUsers.length; i++) {
-			if(u.allUsers[i]._id == $state.params._id){
-				u.user = u.allUsers[i];
+	var self = this;
+	var selectUser = function() {
+		for (var i = 0; i < self.users.length; i++) {
+			if (self.users[i]._id == $state.params._id) {
+				self.user = self.users[i];
 				break;
 			}
 		}
 	}
-	u.allUsers = mongo.get('user', {}, {
-		query: 'getadmin'
-	}, function(){
-		if($state.params._id) selectUser();
+	$http.get('/api/user/me').then(function(resp){
+		for(let key in resp.data){
+			self[key] = resp.data[key];
+		}
+		self.birth = new Date(self.birth);
+		self.skills_checked = {};
+		for (var i = 0; i < self.skills.length; i++) {
+			self.skills_checked[self.skills[i]] = true;
+		}
+		self.users = mongo.get('user', {
+			age: function(val, cb, doc){
+				doc.birth = new Date(doc.birth);
+				let ageDate = new Date(Date.now() - doc.birth.getTime());
+				cb(Math.abs(ageDate.getUTCFullYear() - 1970));
+			}
+		}, {
+			query: 'getadmin'
+		}, function(){
+			if($state.params._id) selectUser();
+		});
 	});
-	u.delete = function(user){
+	this.delete = function(user) {
 		return mongo.delete('user', user, 'admin');
 	}
-
-
-
-
-
-
-
-
-	u.update = function(user) {
-		$timeout.cancel(user.ut);
-		$http.post('/api/user/admin/update', {
-			isAdmin: user.isAdmin,
-			avatarUrl: user.avatarUrl,
-			skills: user.skills,
-			followings: user.followings,
-			followers: user.followers,
-			gender: user.gender,
-			name: user.name,
-			birth: user.birth,
-			data: user.data,
+	this.changePassword = function(user) {
+		if(!user.newPass) return;
+		$http.post('/api/user/admin/changePassword', {
+			newPass: user.newPass,
 			_id: user._id
 		});
+		user.newPass = '';
+		alert('password for user '+user.name+' changed');
 	}
-	u.updateAfterWhile = function(user){
-		$timeout.cancel(user.ut);
-		user.ut = $timeout(function(){
-			u.update(user);
-		}, 1000);
+	this.update = function(user) {
+		if(self.is.super_admin){
+			mongo.updateAll('user', user, 'super');
+		}else if(self.is.admin){
+			mongo.updateAll('user', user, 'admin');
+		}
 	}
-	u.changePassword = function(newPass){
-		$http.post('/api/user/admin/changePassword',{
-			newPass: newPass
+	this.updateAfterWhile = function(user){
+		mongo.afterWhile(self, function(){
+			if(self.is.super_admin){
+				mongo.updateAll('user', user, 'super');
+			}else if(self.is.admin){
+				mongo.updateAll('user', user, 'admin');
+			}
 		});
 	}
+}
+controllers.topbar=function($scope, User){
+	"ngInject";
+	$scope.u = User;
+};
+var userCtrl = function($scope, User){
+	var u = $scope.u = User;
 }
 app.config(function($stateProvider, $locationProvider, $urlRouterProvider) {
 	var root = '/Admin';
