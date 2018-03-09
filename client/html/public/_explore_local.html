@@ -6,7 +6,9 @@
 			<img ng-src="{{user.avatarUrl}}" alt="Avatar of {{user.name}}">
 		</a>
 		<span>{{user.name}}</span>
-		<button ng-if="!user.following" ng-click="u.follow(user)">Follow</button>
-		<button ng-if="user.following" ng-click="u.unfollow(user)">Unfollow</button>
+		<div ng-if="user._id!=u._id">
+			<button ng-if="!user.following" ng-click="u.follow(user)">Follow</button>
+			<button ng-if="user.following" ng-click="u.unfollow(user)">Unfollow</button>
+		</div>
 	</span>
 </scroll>

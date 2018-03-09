@@ -1,7 +1,7 @@
 {% extends '__index.html' %}
 
 {% block body %}
-	<box>
+	<box ng-controller="Auth">
 		<cel style="width: 50%">
 			<box>
 				<cma>
@@ -12,20 +12,36 @@
 		<cel>
 			<box>
 				<cma>
-					<form action="/api/user/signup" method="POST">
+					<form id="SignupFormID" ng-submit="doSignup()">
 						<h1>Sign Up</h1>
-						<label>
+						<label ng-class="{error: user.err==1}">
 							<h2>E-mail</h2>
-							<input type="email" name="username" placeholder="email">
+							<input type="email" name="username" ng-model="user.username" placeholder="email" autocomplete="email">
 						</label>
-						<label>
+						<label ng-class="{error: user.err==2}">
 							<h2>Password</h2>
-							<input type="password" name="password" placeholder="pass phrase">
+							<input type="password" ng-model="user.password" name="password" placeholder="pass phrase" autocomplete="current-password">
 						</label>
-						<button>Sign</button>
+
+						<div ng-class="{error: user.err==3}" vc-recaptcha theme="'light'" key="model.key" on-create="setWidgetId(widgetId)" on-success="setResponse(response)" on-expire="cbExpiration()" ></div>
+
+						<button type="submit">Sign</button>
 					</form>
 				</cma>
 			</box>
 		</cel>
 	</box>
+	<!-- Include the JS ReCaptcha API -->
+	<script src="//www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>
+{% endblock %}
+
+
+{% block script %}
+	<script src="/gen/public-min.js"></script>
+	<script>
+		var app = angular.module('ngapp',['wcom', 'vcRecaptcha']);
+	</script>
+	<script src="/js/wcom/wcom.js"></script>
+	<script src="/js/crud.js"></script>
+	<script src="/js/public.js"></script>
 {% endblock %}

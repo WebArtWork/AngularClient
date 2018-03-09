@@ -1,5 +1,6 @@
 var services = {}, filters = {}, directives = {}, controllers = {};
 app.service(services).filter(filters).directive(directives).controller(controllers);
+
 /*
 *	Crud file for client side user
 *	We don't use waw crud on the user as it's basically personal update.
@@ -26,8 +27,10 @@ services.User = function($http, $timeout, mongo, fm){
 			}
 			self.birth = new Date(self.birth);
 			self.skills_checked = {};
-			for (var i = 0; i < self.skills.length; i++) {
-				self.skills_checked[self.skills[i]] = true;
+			if(self._id){
+				for (var i = 0; i < self.skills.length; i++) {
+					self.skills_checked[self.skills[i]] = true;
+				}
 			}
 			let yearNow = new Date().getFullYear();
 			self.users = mongo.get('user', {
@@ -181,6 +184,7 @@ services.User = function($http, $timeout, mongo, fm){
 		}
 	// Follow Management
 		this.following = function(_id){
+			if(!self._id) return false;
 			for (var i = 0; i < self.followings.length; i++) {
 				if(self.followings[i] == _id) return true;
 			}
