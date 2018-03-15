@@ -1,31 +1,31 @@
 {% extends '__index.html' %}
 
 {% block body %}
-	<box ng-controller="Auth">
-		<cel style="width: 50%">
+	<box ng-controller="Auth" class="explore-container">
+		<cel style="width: 50%" class="user-container">
 			<box>
 				<cma>
 					<img src="" alt="">
 				</cma>
 			</box>
 		</cel>
-		<cel>
+		<cel class="aside-container">
 			<box>
 				<cma>
 					<form id="SignupFormID" ng-submit="doSignup()">
 						<h1>Sign Up</h1>
 						<label ng-class="{error: user.err==1}">
 							<h2>E-mail</h2>
-							<input type="email" name="username" ng-model="user.username" placeholder="email" autocomplete="email">
+							<input class="input" type="email" name="username" ng-model="user.username" placeholder="email" autocomplete="email">
 						</label>
 						<label ng-class="{error: user.err==2}">
 							<h2>Password</h2>
-							<input type="password" ng-model="user.password" name="password" placeholder="pass phrase" autocomplete="current-password">
+							<input class="input" type="password" ng-model="user.password" name="password" placeholder="pass phrase" autocomplete="current-password">
 						</label>
 
 						<div ng-class="{error: user.err==3}" vc-recaptcha theme="'light'" key="model.key" on-create="setWidgetId(widgetId)" on-success="setResponse(response)" on-expire="cbExpiration()" ></div>
 
-						<button type="submit">Sign</button>
+						<button type="submit" class="btn">Sign</button>
 					</form>
 				</cma>
 			</box>

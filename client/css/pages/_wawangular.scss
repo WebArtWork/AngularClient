@@ -1,0 +1,75 @@
+box, cel, row {
+	display: block;
+}
+.absolute-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.v-center {
+	display: flex;
+	align-items: center;
+}
+.h-center {
+	display: flex;
+	justify-content: center;
+}
+/* ===================================== */
+.topbar-container {
+	@extend .v-center;
+	height: 50px;
+	border-bottom: 1px solid #336b87;
+	
+	cma {
+		@extend .absolute-center;
+		height: 100%;
+		width: 100px;
+		transition: all .3s;
+		&:hover {
+			background-color: #336b87;
+			a, a:active {
+				color: $white;
+			}
+		}
+		& > a {
+			display: inline-block;
+		}
+	}
+}
+.topbar-logo {
+	flex: 1;
+	padding: 0 $space;;
+}
+.explore-container {
+	display: flex;
+	height: calc(100vh - 50px);
+}
+.user-container {
+	flex: 1;
+}
+.aside-container {
+	width: 400px;
+	padding: 0.625rem;
+	display: flex;
+	flex-direction: column;
+	background-color: #90afc5;
+	
+	& > row {
+		display: block;
+		margin-bottom: 15px;
+	}
+}
+.age-box {
+	display: flex;
+	justify-content: space-between;
+	cel {
+		width: 48%;
+	}
+}
+.gender-box {
+	@extend .v-center;
+	justify-content: space-around;
+	h4 {
+		margin: 0 10px 0 0;
+	}
+}

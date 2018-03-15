@@ -1,8 +1,8 @@
 {% extends '__index.html' %}
 
 {% block body %}
-	<box ng-controller="Users">
-		<cel lusers>
+	<box ng-controller="Users" class="explore-container">
+		<cel lusers class="user-container">
 			<scroll>
 				<h2>SEO VIEW</h2>
 				{% for _user in users %}
@@ -22,44 +22,46 @@
 			</scroll>
 		</cel>
 		<!-- Filters -->
-		<cel style="width: 400px">
+		<cel class="aside-container">
 			<box>
-				<row style="height: 70px;">
+				<row>
 					<label>
 						<h2>Name</h2>
-						<input type="text" placeholder="Type Name" ng-model="u.sName" ng-change="u.search()">
+						<input class="input" type="text" placeholder="Type Name" ng-model="u.sName" ng-change="u.search()">
 					</label>
 				</row>
-				<row style="height: 70px;">
+				<row>
 					<h2>Age</h2>
-					<box>
+					<box class="age-box">
 						<cel>
 							<label>
 								<h4>From</h4>
-								<input type="number" placeholder="Type Min Age" ng-model="u.sMinAge" ng-change="u.search()">
+								<input class="input" type="number" placeholder="Type Min Age" ng-model="u.sMinAge" ng-change="u.search()">
 							</label>
 						</cel>
 						<cel>
 							<label>
 								<h4>To</h4>
-								<input type="number" placeholder="Type Max Age" ng-model="u.sMaxAge" ng-change="u.search()">
+								<input class="input" type="number" placeholder="Type Max Age" ng-model="u.sMaxAge" ng-change="u.search()">
 							</label>
 						</cel>
 					</box>
 				</row>
-				<row style="height: 70px;">
+				<row>
 					<h2>Gender</h2>
-					<box>
+					<box class="gender-box">
 						<cel>
-							<label>
+							<label class="mark v-center">
 								<input type="checkbox" ng-model="u.sMale" ng-change="u.if_false_make_true('sFemale'); u.search()">
 								<h4>Male</h4>
+								<span class="mark_sign"><span></span></span>
 							</label>
 						</cel>
 						<cel>
-							<label>
+							<label class="mark v-center">
 								<input type="checkbox" ng-model="u.sFemale" ng-change="u.if_false_make_true('sMale'); u.search()">
 								<h4>Female</h4>
+								<span class="mark_sign"><span></span></span>
 							</label>
 						</cel>
 					</box>
@@ -71,9 +73,10 @@
 						<scroll>
 							<box>
 								<row ng-repeat="skill in u.all_skills">
-									<label>
+									<label class="mark">
 										<input type="checkbox" ng-model="u['ss_'+skill]" ng-change="u.search()">
 										<h4>{{skill}}</h4>
+										<span class="mark_sign"><span></span></span>
 									</label>
 								</row>
 							</box>
