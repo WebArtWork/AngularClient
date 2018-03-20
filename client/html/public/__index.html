@@ -24,10 +24,10 @@
 
 </head>
 <body>
-	<box>
-		<row>
+	<box class="container">
+		<row class="row">
 			{% block topbar %}
-			<box class="topbar-container">
+			<box class="column topbar-container">
 				<lma class="topbar-logo"><a href="/">WAW LOGO</a></lma>
 				{% if !user %}
 					<cma><a href="/Login">Login</a></cma>
@@ -53,7 +53,7 @@
 			</box>
 			{% endblock %}
 		</row>
-		<row>
+		<row class="row">
 			{% block body %}{% endblock %}
 		</row>
 	</box>

@@ -7,8 +7,7 @@ box, cel, row {
 	align-items: center;
 }
 .v-center {
-	display: flex;
-	align-items: center;
+	@extend .d-flex, .align-items-center;
 }
 .h-center {
 	display: flex;
@@ -21,18 +20,19 @@ box, cel, row {
 	border-bottom: 1px solid #336b87;
 	
 	cma {
-		@extend .absolute-center;
 		height: 100%;
 		width: 100px;
 		transition: all .3s;
 		&:hover {
 			background-color: #336b87;
-			a, a:active {
+			a, a:active, a:visited {
 				color: $white;
 			}
 		}
 		& > a {
-			display: inline-block;
+			@extend .absolute-center;
+			width: 100%;
+			height: 100%;
 		}
 	}
 }
@@ -41,7 +41,7 @@ box, cel, row {
 	padding: 0 $space;;
 }
 .explore-container {
-	display: flex;
+	@extend .d-flex;
 	height: calc(100vh - 50px);
 }
 .user-container {
