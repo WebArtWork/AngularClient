@@ -1,3 +1,15 @@
+$bg-topbar: rgba(60, 141, 188, 1);  			
+$bg-topbar--hover: rgba(53, 124, 165, 1);       
+$bg-main: rgba(236, 240, 245, 1);               
+$bg-sidebar: rgba(34, 45, 50, 1);               
+$bg-sidebar--hover: rgba(30, 40, 44, 1);        
+$input-bg-color: rgba(55, 72, 80, 1);           
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content}
+	&:-moz-placeholder           {@content}
+	&::-moz-placeholder          {@content}
+	&:-ms-input-placeholder      {@content}  
+}
 box, cel, row {
 	display: block;
 }
@@ -10,53 +22,80 @@ box, cel, row {
 	@extend .d-flex, .align-items-center;
 }
 .h-center {
-	display: flex;
-	justify-content: center;
+	@extend .d-flex;
+	justfy-content: center;
 }
-/* ===================================== */
+/* =========== topbar ============== */
 .topbar-container {
 	@extend .v-center;
 	height: 50px;
-	border-bottom: 1px solid #336b87;
-	
+	background-color: $bg-topbar;
+	a {
+		color: $white;
+	}
 	cma {
 		height: 100%;
 		width: 100px;
-		transition: all .3s;
+		transition: .3s;
 		&:hover {
-			background-color: #336b87;
-			a, a:active, a:visited {
-				color: $white;
-			}
+			background-color:  $bg-topbar--hover;
 		}
 		& > a {
 			@extend .absolute-center;
 			width: 100%;
 			height: 100%;
+			text-decoration: none;
 		}
 	}
 }
 .topbar-logo {
 	flex: 1;
-	padding: 0 $space;;
+	padding: 0 $space2;
 }
+/* =========== content ============== */
 .explore-container {
 	@extend .d-flex;
 	height: calc(100vh - 50px);
+	overflow: hidden;
 }
 .user-container {
 	flex: 1;
+	background-color:  $bg-main;
+	overflow-y: auto;
 }
+/* =========== sidebar ============== */
 .aside-container {
-	width: 400px;
+	width: 300px;
 	padding: 0.625rem;
 	display: flex;
 	flex-direction: column;
-	background-color: #90afc5;
+	background-color: $bg-sidebar;
+	color: $gray;
+	
+	input {
+		background-color: $input-bg-color;
+		border-color: transparent;
+		color: $white;
+		&:focus {
+			background-color: lighten($input-bg-color, 10%);
+		}
+		@include placeholder {
+		    text-indent: 0px;
+		    transition: text-indent 400ms;
+		}
+		&:focus {
+			@include placeholder {
+				text-indent: 500px;
+			}
+		}
+	}
 	
 	& > row {
 		display: block;
 		margin-bottom: 15px;
+	}
+	.sign-in-up--title, h2 {
+		color: $white;
 	}
 }
 .age-box {
@@ -71,5 +110,17 @@ box, cel, row {
 	justify-content: space-around;
 	h4 {
 		margin: 0 10px 0 0;
+	}
+}
+/* =========== sign up ============== */
+.g-recaptcha-outer {
+	margin: $fs-xs 0;
+	.g-recaptcha-inner {
+		width: 240px;
+		margin: 0 auto;
+		.g-recaptcha {
+			transform: scale(0.8);
+			transform-origin: left;
+		}
 	}
 }
