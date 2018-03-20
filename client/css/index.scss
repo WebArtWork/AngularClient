@@ -40,7 +40,6 @@
 @import "elements/complex/scrollbar";
 
 // 6. Pages - specific styles for separete pages
-@import "pages/variables";
-@import "pages/grid";
-@import "pages/container";
+@import "grid/flexible-grid";
+
 @import "pages/wawangular";
