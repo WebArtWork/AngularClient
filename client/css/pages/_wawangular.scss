@@ -1,9 +1,11 @@
+/* =========== topbar ============== */
 $bg-topbar: rgba(60, 141, 188, 1);  			
 $bg-topbar--hover: rgba(53, 124, 165, 1);       
 $bg-main: rgba(236, 240, 245, 1);               
 $bg-sidebar: rgba(34, 45, 50, 1);               
 $bg-sidebar--hover: rgba(30, 40, 44, 1);        
-$input-bg-color: rgba(55, 72, 80, 1);           
+$input-bg-color: rgba(55, 72, 80, 1);    
+/* =========== mixins ============== */       
 @mixin placeholder {
 	&::-webkit-input-placeholder {@content}
 	&:-moz-placeholder           {@content}
