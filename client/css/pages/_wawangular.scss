@@ -1,4 +1,4 @@
-/* =========== topbar ============== */
+/* =========== variables ============== */
 $bg-topbar: rgba(60, 141, 188, 1);  			
 $bg-topbar--hover: rgba(53, 124, 165, 1);       
 $bg-main: rgba(236, 240, 245, 1);               
@@ -12,7 +12,7 @@ $input-bg-color: rgba(55, 72, 80, 1);
 	&::-moz-placeholder          {@content}
 	&:-ms-input-placeholder      {@content}  
 }
-box, cel, row {
+box, cel, row, cma {
 	display: block;
 }
 .absolute-center {
@@ -40,13 +40,49 @@ box, cel, row {
 		width: 100px;
 		transition: .3s;
 		&:hover {
-			background-color:  $bg-topbar--hover;
+			background-color: $bg-topbar--hover;
 		}
 		& > a {
 			@extend .absolute-center;
 			width: 100%;
 			height: 100%;
 			text-decoration: none;
+		}
+	}
+	.user-menu {
+		@extend .d-flex;
+		width: 300px;
+		box {
+			@extend .d-flex;
+		}
+		a {
+			@extend .absolute-center;
+			width: 100%;
+			height: 100%;
+			text-decoration: none;
+			&:hover {
+				background-color: $bg-topbar--hover;
+			}
+		}
+		&:hover {
+			background-color: inherit;
+		}
+		&__avatar {
+			width: 50px;
+			img {
+				border-radius: 50%;
+			}
+		}
+		&__name {
+			width: 150px;
+			@extend .absolute-center;
+			color: $white;
+			padding: 5px;
+			span {
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
 		}
 	}
 }

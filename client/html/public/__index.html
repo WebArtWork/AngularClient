@@ -34,19 +34,19 @@
 					<cma><a href="/Sign">Sign Up</a></cma>
 				{% endif %}
 				{% if user&&user.is.admin %}
-					<cma style="width: 100px;"><a href="/Admin">Admin</a></cma>
+					<cma><a href="/Admin">Admin</a></cma>
 				{% endif %}
 				{% if user %}
-					<cma style="width: 200px;">
+					<cma class="user-menu">
 						<box>
-							<cma style="width: 50px;">
+							<cma class="user-menu__avatar">
 								<img src="{{{user.avatarUrl}}}" alt="User Face">
 							</cma>
-							<cma style="width: 150px;">{{{user.name}}}</cma>
+							<cma class="user-menu__name"><span>{{{user.name}}}</span></cma>
 						</box>
 						<box>
-							<row><a href="/MyProfile">My Profile</a></row>
-							<row><a href="/api/user/logout">Log out</a></row>
+							<row class="user-menu__profile"><a href="/MyProfile">My Profile</a></row>
+							<row class="user-menu__logout"><a href="/api/user/logout">Log Out</a></row>
 						</box>
 					</cma>
 				{% endif %}
