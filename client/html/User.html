@@ -23,10 +23,10 @@
 
 </head>
 <body>
-	<box>
-		<row style="height: 50px;">
-			<box>
-				<lma><a href="/" target="_self">WAW LOGO</a></lma>
+	<box class="container">
+		<row class="row">
+			<box class="topbar-container">
+				<lma class="topbar-logo"><a href="/" target="_self">WAW LOGO</a></lma>
 				
 				<cma ng-if="u.is.admin" style="width: 100px;"><a target="_self" href="/Admin">Admin</a></cma>
 
@@ -44,7 +44,7 @@
 				</cma>
 			</box>
 		</row>
-		<row>
+		<row class="row">
 			<ui-view></ui-view>
 		</row>
 	</box>

@@ -74,8 +74,8 @@ box, cel, row, cma {
 			}
 		}
 		&__name {
-			width: 150px;
 			@extend .absolute-center;
+			width: 150px;
 			color: $white;
 			padding: 5px;
 			span {
@@ -83,6 +83,14 @@ box, cel, row, cma {
 				white-space: nowrap;
 				text-overflow: ellipsis;
 			}
+		}
+		&__profile {
+			@extend .absolute-center;
+			width: 50px;
+		}
+		&__logout {
+			@extend .absolute-center;
+			width: 50px;
 		}
 	}
 }
