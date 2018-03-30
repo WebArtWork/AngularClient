@@ -106,7 +106,7 @@ box, cel, row, cma {
 }
 .user-container {
 	flex: 1;
-	background-color:  $bg-main;
+	background-color: $bg-main;
 	overflow-y: auto;
 }
 /* =========== sidebar ============== */
@@ -167,6 +167,38 @@ box, cel, row, cma {
 		.g-recaptcha {
 			transform: scale(0.8);
 			transform-origin: left;
+		}
+	}
+}
+
+/* =========== MyProfile ============== */
+.main-box {
+	height: calc(100vh - 50px);
+	background-color: $bg-main;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.profile-avatar {
+	max-width: 200px;
+	div {
+		border: 1px solid $gray;
+		border-radius: 5px;
+	}
+}
+.profileInfo-box {
+	flex: 1;
+}
+.profileInfo {
+	
+	& > div {
+		border-bottom: 1px solid $gray;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+	&__birthday {
+		input {
+			margin-bottom: 1rem;
 		}
 	}
 }

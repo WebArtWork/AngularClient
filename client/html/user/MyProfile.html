@@ -1,41 +1,47 @@
-<div class="d-flex flex-wrap p-10">
-	<div class="row">	
-		<div class="column xs-12 sm-6 md-4 m-10">
-			<label for="ProfileID">
-				<img ng-src="{{u.avatarUrl}}" alt="User Face">
-			</label>
+<div class="d-flex p-10 main-box">
+	<div class="row m-0">	
+		<div class="m-10 profile-avatar">
+			<div class="m-10">
+				<label for="ProfileID">
+					<img ng-src="{{u.avatarUrl}}" alt="User Face">
+				</label>
+			</div>
 		</div>
 	</div>
 	
-	<div class="row">
-		<div class="column column xs-12 sm-6 md-8 m-10">
-			<h3>My Skills</h3>
-			<label class="mark" ng-repeat='skill in u.all_skills'>
-				<input type="checkbox" ng-model="u.skills_checked[skill]" ng-change="u.updateSkill()">
-				<span class="mark_sign"><span></span></span>
-				<span class="mark_text">{{skill}}</span>
-			</label>
-		</div>
+	<div class="row m-0 profileInfo-box">
+		<div class="d-flex flex-d-column m-10 profileInfo">
 
-		<div class="column column xs-12 sm-6 md-8 m-10">
-			<label>
-				<h3>Name</h3>
-				<input class="input" type="text" ng-model="u.name" ng-change="u.updateAfterWhile()">
-			</label>
-		</div>
+			<div class="m-10 profileInfo__skills">
+				<h3>My Skills</h3>
+				<label class="mark" ng-repeat='skill in u.all_skills'>
+					<input type="checkbox" ng-model="u.skills_checked[skill]" ng-change="u.updateSkill()">
+					<span class="mark_sign"><span></span></span>
+					<span class="mark_text">{{skill}}</span>
+				</label>
+			</div>
 
-		<div class="column column xs-12 sm-6 md-8 m-10">
-			<label>
-				<h3>Birthday</h3>
-				<input type="date" ng-model="u.birth" ng-change="u.updateAfterWhile()">
-			</label>
-		</div>
+			<div class="m-10 profileInfo__name">
+				<label>
+					<h3>Name</h3>
+					<input class="input" type="text" ng-model="u.name" ng-change="u.updateAfterWhile()">
+				</label>
+			</div>
 
-		<div class="column column xs-12 sm-6 md-8 m-10">
-			<label>
-				<h3>Gender</h3>
-				<select type="text" ng-model="u.gender" ng-change="u.updateAfterWhile()" ng-options="gender for gender in ['male', 'female']"></select>
-			</label>
+			<div class="m-10 profileInfo__birthday">
+				<label>
+					<h3>Birthday</h3>
+					<input type="date" ng-model="u.birth" ng-change="u.updateAfterWhile()">
+				</label>
+			</div>
+
+			<div class="m-10 profileInfo__gender">
+				<label>
+					<h3>Gender</h3>
+					<select type="text" ng-model="u.gender" ng-change="u.updateAfterWhile()" ng-options="gender for gender in ['male', 'female']"></select>
+				</label>
+			</div>
+
 		</div>
 	</div>
 

@@ -1,5 +1,5 @@
 <scroll>
-	<box>
+	<box class="main-box">
 		<row>
 			<cel>avatar</cel>
 			<cel>email</cel>
@@ -7,12 +7,14 @@
 		</row>
 		<!-- |filter:{'is.admin': true} -->
 		<row ng-repeat="user in u.users" ng-if="user.is.admin">
-			<cel><img ng-src="{{user.avatarUrl}}" alt=""></cel>
+			<cel>
+				<img ng-src="{{user.avatarUrl}}" alt="">
+			</cel>
 			<cel>{{user.email}}</cel>
 			<cel>
-				<button ng-click="user.architect.push({}); u.update(user);">New</button>
+				<button class="btn" ng-click="user.architect.push({}); u.update(user);">New</button>
 				<div ng-repeat="arch in user.architect">
-					<input type="text" ng-model="arch.name" ng-change="u.update(user);">
+					<input class="input" type="text" ng-model="arch.name" ng-change="u.update(user);">
 					<select ng-model="arch.what" ng-options="what for what in ['text', 'bool', 'number']" ng-change="u.updateAfterWhile(user)"></select>
 				</div>
 			</cel>

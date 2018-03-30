@@ -1,5 +1,5 @@
 <scroll>
-	<box>
+	<box class="main-box">
 		<row>
 			<cel>avatar</cel>
 			<cel>email</cel>
@@ -15,15 +15,15 @@
 			<cel>{{user.name}}</cel>
 
 			<cel ng-if="u.is.super_admin">
-				<button ng-click="user.is.admin=!user.is.admin; u.update(user);"><span ng-if="!user.is.admin">Make</span><span ng-if="user.is.admin">Remove</span> Admin</button>
+				<button class="btn" ng-click="user.is.admin=!user.is.admin; u.update(user);"><span ng-if="!user.is.admin">Make</span><span ng-if="user.is.admin">Remove</span> Admin</button>
 			</cel>
 			<cel ng-if="u.is.super_admin">
-				<button ng-click="u.delete(user)" ng-if="u._id != user._id">Delete</button>
+				<button class="btn" ng-click="u.delete(user)" ng-if="u._id != user._id">Delete</button>
 			</cel>
 			<cel ng-if="u.is.super_admin">
 				<form ng-submit='u.changePassword(user)'>
-					<input type="password" placeholder="new pass" ng-model="user.newPass" autocomplete="new-password">
-					<button type="submit">Change</button>
+					<input class="input" type="password" placeholder="new pass" ng-model="user.newPass" autocomplete="new-password">
+					<button class="btn" type="submit">Change</button>
 				</form>
 			</cel>
 
