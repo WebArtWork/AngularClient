@@ -71,7 +71,7 @@
 					<!-- Add select which specify the search like: have all skills selected, have at least one of the skills selected, have few skills selected -->
 					<box>
 						<scroll>
-							<box>
+							<box class="skill-box">
 								<row ng-repeat="skill in u.all_skills">
 									<label class="mark v-center">
 										<input type="checkbox" ng-model="u['ss_'+skill]" ng-change="u.search()">

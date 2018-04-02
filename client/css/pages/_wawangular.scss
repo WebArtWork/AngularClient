@@ -151,12 +151,17 @@ box, cel, row, cma {
 		width: 48%;
 	}
 }
-.gender-box {
-	@extend .v-center;
-	justify-content: space-around;
+.gender-box, .skill-box {
 	h4 {
 		margin: 0 10px 0 0;
 	}
+}
+.gender-box {
+	@extend .v-center;
+	justify-content: space-around;
+}
+.skill-box {
+	padding: 0 $fs-l;
 }
 /* =========== sign up ============== */
 .g-recaptcha-outer {
@@ -199,6 +204,43 @@ box, cel, row, cma {
 	&__birthday {
 		input {
 			margin-bottom: 1rem;
+		}
+	}
+}
+/* =========== Admin/Users ============== */
+.userAdmin__items {
+	display: flex;
+	justify-content: space-evenly;
+    margin-bottom: $fs-xs;
+    border-bottom: 1px solid;
+    cel {
+    	border-bottom: 1px solid transparent;
+    	&:hover {
+	    	border-bottom-color: inherit;
+	    }
+    }
+}
+.p-cel {
+	padding: $fs-l;
+}
+.userAdmin__edits {
+	
+	.info {
+		display: flex;
+    	margin-bottom: $fs-xs;
+		&-foto {
+			max-width: 200px;
+			margin-right: $fs-l;
+		}
+		&-box {
+			cel {
+				margin-bottom: $fs-xs;
+			}
+		}
+	}
+	.newUser {
+		div {
+			margin-bottom: $fs-xs;
 		}
 	}
 }
