@@ -9,6 +9,7 @@
 		<meta name="keywords" content="waw, waw framework">
 		<meta name="author" content="Honchar Denys">
 	{% endblock %}
+	<link rel="stylesheet" type="text/css" href="/gen/public.css">
 	<link rel="stylesheet" type="text/css" href="/css/index.css">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -45,8 +46,8 @@
 							<cma class="user-menu__name"><span>{{{user.name}}}</span></cma>
 						</box>
 						<box>
-							<row class="user-menu__profile"><a href="/MyProfile">My Profile</a></row>
-							<row class="user-menu__logout"><a href="/api/user/logout">Log Out</a></row>
+							<row class="user-menu__profile"><a href="/MyProfile"><i class="icon icon-useredit"></i></a></row>
+							<row class="user-menu__logout"><a href="/api/user/logout"><i class="icon icon-logout"></i></a></row>
 						</box>
 					</cma>
 				{% endif %}
