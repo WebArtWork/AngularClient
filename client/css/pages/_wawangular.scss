@@ -244,3 +244,14 @@ box, cel, row, cma {
 		}
 	}
 }
+
+/* =========== MySettings ============== */
+.userSettings {
+	h2 {
+		font-size: $fs-xl;
+		flex: 1;
+	}
+	input {
+		flex: 2;
+	}
+}
