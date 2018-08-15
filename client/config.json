@@ -13,5 +13,5 @@
 		"name": "public",
 		"files": ["1_angular.js", "angular-recaptcha.js"]
 	}],
-	"plugins": ["wcom", "wmodal"]
+	"plugins": ["wcom"]
 }
