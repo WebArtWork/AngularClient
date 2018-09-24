@@ -31,5 +31,6 @@
 		"passport-local": "*",
 		"bcrypt-nodejs": "*",
 		"mongoose": "*"
-	}
+	},
+	"client": true
 }
