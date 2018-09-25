@@ -1,0 +1,15 @@
+{
+	"name": "Post",
+	"router": [{
+		"name": "Basic",
+		"src": "router.js"
+	}],
+	"dependencies": {
+	},
+	"crud": {
+		"updatesAll": [{
+			"keys": ["text", "photos", "comment"],
+			"name": ""
+		}]
+	}
+}

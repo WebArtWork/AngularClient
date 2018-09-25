@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="ngapp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:site_name" content="{{{host}}}" />
+    <meta property="og:url" content="https://{{{host}}}" />
+    <meta name="twitter:site" content="https://{{{host}}}/">
+    <meta name="twitter:creator" content="Magnus Larsson">
+    <meta name="author" content="Magnus Larsson">
+    <meta property="og:type" content="website" />
+
+    <title>{{{title|tr(lang)}}}</title>
+    <meta itemprop="name" content="{{{title|tr(lang)}}}">
+    <meta name="twitter:title" content="{{{title|tr(lang)}}}">
+    <meta property="og:title" content="{{{title|tr(lang)}}}" />
+
+    <meta name="description" content="{{{description|tr(lang)}}}">
+    <meta itemprop="description" content="{{{description|tr(lang)}}}">
+    <meta name="twitter:description" content="{{{description|tr(lang)}}}">
+    <meta property="og:description" content="{{{description|tr(lang)}}}" />
+
+    <meta itemprop="image" content=SEO content="{{{image|tr(lang)}}}">
+    <meta name="twitter:image:src" content="{{{image|tr(lang)}}}">
+    <meta property="og:image" content="{{{image|tr(lang)}}}" />
+
+    <meta name="keywords" content="{{{keywords|tr(lang)}}}"> {% if seLink %}
+    <link rel="alternate" hreflang="se" href="https://{{{host}}}{{{seLink}}}" title="This Webpage in Swedish"> {% endif %}{% if enLink %}
+    <link rel="alternate" hreflang="en" href="https://{{{host}}}{{{enLink}}}" title="This Webpage in English"> {% endif %}{% if ruLink %}
+    <link rel="alternate" hreflang="ru" href="https://{{{host}}}{{{ruLink}}}" title="This Webpage in Russian"> {% endif %}{% if uaLink %}
+    <link rel="alternate" hreflang="ua" href="https://{{{host}}}{{{uaLink}}}" title="This Webpage in Ukranian"> {% endif %}
+
+    <meta name="author" content="Magnus Larsson">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+
+<body>
+    {% block body %}{% endblock %}
+</body>
+
+</html>
