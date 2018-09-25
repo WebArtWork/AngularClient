@@ -2,8 +2,8 @@
 *
 # Except this file
 !.gitignore
-!lab
-!lang
-!icons
-!fonts
-!img
+!lab/
+!lang/
+!icons/
+!fonts/
+!img/
