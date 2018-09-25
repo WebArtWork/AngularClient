@@ -1,5 +1,5 @@
 module.exports = function(app, sd) {
-	app.get('/test', function(req, res){
-		res.send('server page is working');
+	sd._page('/Login', 'Login', {
+		page: 'Land'
 	});
 };

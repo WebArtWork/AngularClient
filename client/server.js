@@ -18,21 +18,6 @@ module.exports = function(app, sd) {
 		app.get('/Profile/:_id/en', sd._set_en, Profile);
 		app.get('/Profile/:_id/ua', sd._set_ua, Profile);
 		app.get('/Profile/:_id/ru', sd._set_ru, Profile);
-
-		var Sign = function(req, res){
-			res.render('public/Sign', sd._ro(req, res, {}));
-		}
-		app.get('/Sign', Sign);
-		app.get('/Sign/en', sd._set_en, Sign);
-		app.get('/Sign/ua', sd._set_ua, Sign);
-		app.get('/Sign/ru', sd._set_ru, Sign);
-		var Login = function(req, res){
-			res.render('public/Login', sd._ro(req, res, {}));
-		}
-		app.get('/Login', Login);
-		app.get('/Login/en', sd._set_en, Login);
-		app.get('/Login/ua', sd._set_ua, Login);
-		app.get('/Login/ru', sd._set_ru, Login);
 	/*
 	*	Local Routes
 	*	[add local routes below this line]
