@@ -25,11 +25,10 @@
     <meta name="twitter:image:src" content="{{{image|tr(lang)}}}">
     <meta property="og:image" content="{{{image|tr(lang)}}}" />
 
-    <meta name="keywords" content="{{{keywords|tr(lang)}}}"> {% if seLink %}
-    <link rel="alternate" hreflang="se" href="https://{{{host}}}{{{seLink}}}" title="This Webpage in Swedish"> {% endif %}{% if enLink %}
-    <link rel="alternate" hreflang="en" href="https://{{{host}}}{{{enLink}}}" title="This Webpage in English"> {% endif %}{% if ruLink %}
-    <link rel="alternate" hreflang="ru" href="https://{{{host}}}{{{ruLink}}}" title="This Webpage in Russian"> {% endif %}{% if uaLink %}
-    <link rel="alternate" hreflang="ua" href="https://{{{host}}}{{{uaLink}}}" title="This Webpage in Ukranian"> {% endif %}
+    <meta name="keywords" content="{{{keywords|tr(lang)}}}"> 
+
+
+    <!-- <link rel="alternate" hreflang="se" href="https://{{{host}}}{{{seLink}}}" title="This Webpage in Swedish"> -->
 
     <meta name="author" content="Magnus Larsson">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
@@ -37,6 +36,7 @@
 
 <body>
     {% block body %}{% endblock %}
+    <script src="/assets/public-min.js"></script>
 </body>
 
 </html>

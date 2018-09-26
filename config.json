@@ -17,5 +17,6 @@
 			"successRedirect": "/",
 			"failureRedirect": "/"
 		}
-	}
+	},
+	"livereload": true
 }
