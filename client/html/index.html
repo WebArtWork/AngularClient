@@ -34,12 +34,18 @@
     <link rel="stylesheet" type="text/css" href="/css/index.css">
 </head>
 
-<body>
+<body ng-controller="sdfsdf">
     {% block body %}{% endblock %}
     <script src="/waw/p/angular.js"></script>
     <script src="/waw/p/wcom.js"></script>
     <script>
-        var app = angular.module('ngapp', ['wcom']);
+        var app = angular.module('ngapp', ['wcom']).controller('sdfsdf', function(mongo){
+            var arr = [{num: 1},{num: 2},{num: 3},{num: 4}];
+            arr.sort(mongo.sortDescNumber('num'));
+            console.log(arr);
+
+        });
+
     </script>
 </body>
 
