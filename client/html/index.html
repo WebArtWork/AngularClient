@@ -36,7 +36,11 @@
 
 <body>
     {% block body %}{% endblock %}
-    <script src="/assets/public-min.js"></script>
+    <script src="/waw/p/angular.js"></script>
+    <script src="/waw/p/wcom.js"></script>
+    <script>
+        var app = angular.module('ngapp', ['wcom']);
+    </script>
 </body>
 
 </html>

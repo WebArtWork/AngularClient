@@ -1,5 +1,5 @@
 module.exports = function(app, sd) {
-	sd._page('/Post', 'Explore', {
+	sd._page('/', 'User', {
 		page: 'Explore'
 	});
 	var Admin = function(req, res){
