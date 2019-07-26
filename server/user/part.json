@@ -1,36 +1,31 @@
 {
-	"name": "User",
+	"name": "user",
+	"dependencies": {
+		"passport.socketio": "*",
+		"express-recaptcha": "*",
+		"passport-local": "*",
+		"bcrypt-nodejs": "*",
+		"passport": "*",
+		"mongoose": "*"
+	},
 	"router": [{
 		"name": "Basic",
 		"src": "router.js"
+	}, {
+		"name": "Pages",
+		"src": "pages/route.js"
 	}, {
 		"name": "Auth",
 		"src": "auth.js"
 	}],
 	"crud": {
-		"get": ["admin"],
 		"updatesAll": [{
-			"keys": ["gender","name","birth","skills","data"],
+			"keys": ["name"],
 			"name": ""
-		},{
-			"keys": ["gender","name","birth","skills","data","kind"],
-			"name": "admin"
-		},{
-			"keys": ["gender","name","birth","skills","data","is","kind","architect"],
-			"name": "super"
 		}],
-		"updates": [],
-		"deletes": ["admin"],
 		"unique_field": [{
 			"key": "email",
-			"name": "email"
+			"name": ""
 		}]
-	},
-	"dependencies": {
-		"express-recaptcha": "*",
-		"passport-local": "*",
-		"bcrypt-nodejs": "*",
-		"mongoose": "*"
-	},
-	"client": true
+	}
 }

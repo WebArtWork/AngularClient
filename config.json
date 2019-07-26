@@ -1,22 +1,35 @@
 {
 	"name": "wawAngular",
-	"description": "Sample project from waw framework.",
-	"icon": "/client/assets/img/favicon.png",
-	"prefix": "initialize",
+	"description": "Sample project from waw framework with Angular 1.x Client.",
 	"license": "MIT",
-	"port": 8080,
-	"session": true,
 	"production": false,
-	"mongo": {
-		"host": "localhost",
-		"port": 27017,
-		"db": "newdb"
-	},
+	"icon": "/client/assets/img/favicon.png",
+	"prefix": "wawAngular",
+	"port": 8080,
 	"passport": {
 		"local": {
 			"successRedirect": "/",
 			"failureRedirect": "/"
 		}
 	},
-	"livereload": true
+	"mongo": {
+		"host": "localhost",
+		"port": 27017,
+		"db": "angular"
+	},
+	"runners": {
+		"nodemon": "latest"
+	},
+	"parts": {
+		"express": "latest",
+		"socket": "latest",
+		"session": "latest",
+		"mongo": "latest",
+		"crud": "latest",
+		"derer": "latest",
+		"angular": "latest"
+	},
+	"helpers": {
+		"git": "latest"
+	}
 }

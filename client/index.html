@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="ngapp">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WAW Framework</title>
+	<meta name="description" content="Initial waw client under angular 1.x and scss.">
+	<meta name="keywords" content="waw, waw framework">
+	<meta name="author" content="Honchar Denys">
+	<base href="/">
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/gen/public.css">
+</head>
+<body ng-controller="root">
+	<div>Welcome to waw family <i class="icon icon-code"></i> </div>
+	<ui-view></ui-view>
+	<script src="/gen/lab-min.js"></script>
+	<script>
+		var app = angular.module('ngapp', ['ui.router', 'wcom']).controller('root', function(user){});
+	</script>
+	<script src="/services/user.js"></script>
+</body>
+</html>

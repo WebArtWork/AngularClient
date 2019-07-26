@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% block body %}
+<form action="/api/user/login" method="POST">
+	<input type="email" name="username" placeholder="email" value="crackeraki@gmail.com">
+	<input type="password" name="password" placeholder="password" value="asdasdasdasd">
+	<button>Sign</button>
+</form>
+<a href="/Sign">Sign up</a>
+<a href="/Reset">Reset</a>
+{% endblock %}

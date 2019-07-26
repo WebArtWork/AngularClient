@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="ngapp">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{{title}}}</title>
+	<meta itemprop="name" content="{{{title}}}">
+	<meta name="twitter:title" content="{{{title}}}">
+	<meta property="og:title" content="{{{title}}}" />
+
+	<meta name="description" content="{{{description}}}">
+	<meta itemprop="description" content="{{{description}}}">
+	<meta name="twitter:description" content="{{{description}}}">
+	<meta property="og:description" content="{{{description}}}" />
+
+	<meta itemprop="image" content="{{{image}}}">
+	<meta name="twitter:image:src" content="{{{image}}}">
+	<meta property="og:image" content="{{{image}}}" />
+
+	<meta name="keywords" content="{{{keywords}}}">
+	<base href="/">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="//www.googletagmanager.com/gtag/js?id=UA-78236546-11"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'UA-78236546-11');
+	</script>
+</head>
+<body ng-controller="main">
+	{% block body %}{% endblock %}
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script>
+		angular.module('ngapp', []).controller('main', function(){});
+	</script>
+</body>
+</html>
