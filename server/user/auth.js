@@ -1,7 +1,5 @@
 var User = require(__dirname+'/schema.js');
 var mongoose = require('mongoose');
-var Recaptcha = require('express-recaptcha').Recaptcha;
-var recaptcha = new Recaptcha('6Lf4nUsUAAAAAMtjSbr2Nfj0iDrc3RSlkEzepIcN', '6Lf4nUsUAAAAANR6Vmkafh82L2Gf08AREuRicHS7');
 module.exports = function(sd) {
 	/*
 	*	Initialize User and Mongoose
@@ -53,25 +51,23 @@ module.exports = function(sd) {
 				passwordField : 'password',
 				passReqToCallback : true
 			}, function(req, username, password, done) {
-				recaptcha.verify(req, function(error) {
-					User.findOne({
-						'email': username.toLowerCase()
-					}, function(err, user) {
-						if (err) return done(err);
-						if (user) return done(null, false);
-						else {
-							var newUser = new User();
-							newUser.is = {
-								admin: false
-							};
-							newUser.email = username.toLowerCase();
-							newUser.password = newUser.generateHash(password);
-							newUser.save(function(err) {
-								if (err) throw err;
-								return done(null, newUser);
-							});
-						}
-					});
+				User.findOne({
+					'email': username.toLowerCase()
+				}, function(err, user) {
+					if (err) return done(err);
+					if (user) return done(null, false);
+					else {
+						var newUser = new User();
+						newUser.is = {
+							admin: false
+						};
+						newUser.email = username.toLowerCase();
+						newUser.password = newUser.generateHash(password);
+						newUser.save(function(err) {
+							if (err) throw err;
+							return done(null, newUser);
+						});
+					}
 				});
 			}));
 		}
